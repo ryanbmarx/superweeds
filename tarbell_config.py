@@ -4,6 +4,10 @@
 Tarbell project configuration
 """
 
+
+from flask import Blueprint
+import locale
+
 # Google spreadsheet key
 SPREADSHEET_KEY = "1n4L0rZzH52SEMI8s-KhjkuVVlVSiKxfw5ldkowFkZRA"
 
@@ -48,3 +52,12 @@ DEFAULT_CONTEXT = {
     'name': 'superweeds',
     'title': 'Glyphosate-resistant weeds'
 }
+
+blueprint = Blueprint('split_peas', __name__)
+@blueprint.app_template_filter('split_peas')
+def split_peas(text):
+    text = text.split('\n')
+    newtext = ""
+    for line in text:
+        newtext += "<p>%s</p>" % line
+    return newtext
