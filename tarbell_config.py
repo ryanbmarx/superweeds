@@ -8,7 +8,7 @@ Tarbell project configuration
 SPREADSHEET_KEY = "1n4L0rZzH52SEMI8s-KhjkuVVlVSiKxfw5ldkowFkZRA"
 
 # Exclude these files from publication
-EXCLUDES = ["*.md", "requirements.txt"]
+EXCLUDES = ['*.md', 'requirements.txt', 'node_modules', 'sass', 'js/src', 'package.json', 'Gruntfile.json']
 
 # Spreadsheet cache lifetime in seconds. (Default: 4)
 # SPREADSHEET_CACHE_TTL = 4
@@ -39,6 +39,12 @@ S3_BUCKETS = {
 
 # Default template variables
 DEFAULT_CONTEXT = {
+   'OMNITURE': {   'domain': 'chicagotribune.com',
+                    'section': 'news',
+                    'sitename': 'Chicago Tribune',
+                    'subsection': 'local',
+                    'subsubsection': 'crime',
+                    'type': 'dataproject'},
     'name': 'superweeds',
     'title': 'Glyphosate-resistant weeds'
 }
