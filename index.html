@@ -11,12 +11,29 @@
                     {% include "_social_row.html" %}
                     <h1 itemprop="headline">{{ headline }}</h1>
                     <h2 itemprop="headline">{{ dek }}</h2>
-                    <p>Brought to you by <span itemprop="author">the Chicago Tribune News Apps team</span></p>
-                    <p>Updated last <span itemprop="datePublished">July 15, 2014</span></p>
+                    {% include "_bylines.html" %}
                     {{ chatter|split_peas|process_text }}   
                 </div>
             </div>
         </div>
     </section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+            {% include "partials/_sources.html" %}
+            </div>
+        </div>
+    </div>
 </article>
 {% endblock content %}
+
+{% block css %}
+{{ super() }}
+<link rel="stylesheet" type="text/css" href="css/styles.css">
+{% endblock css %}
+
+{% block library_scripts %}
+{{ super() }}
+<script type="text/javascript" src="js/app.min.js"></script>
+{% endblock library_scripts %}
+

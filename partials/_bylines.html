@@ -1,0 +1,9 @@
+<div class='byline'>
+    <p class="ct-byline author"> By 
+        {% for row in bylines %}
+        <span><a itemprop="author" href="{{ row.link }}">{{ row.first }} {{ row.last }}</a></span>{% if not loop.last %}, {% endif %}
+        {% endfor %}
+    </p>
+    <p class="ct-byline-source organization" itemprop="publisher">Chicago Tribune</p>
+    <p class="ct-time-stamp pub-date"><span itemprop="datePublished">{{ today }}</span></p>
+</div>

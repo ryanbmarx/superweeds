@@ -1,0 +1,20 @@
+<section id='sources' class='credits'>
+    <p>
+        {% for row in sources %}
+            {% if loop.first %}
+                {% if sources|length > 1 %}
+                    Sources:&nbsp;
+                {% else %}
+                    Source:&nbsp;
+                {% endif %}
+            {% endif %}
+            {% if row.link %}
+                <a href="row.link" target="_blank">
+            {% endif %}
+            {{ row.name }}{% if not loop.last %}, {% endif %}
+            {% if row.link %}
+                </a>
+            {% endif %}
+        {% endfor %}
+    </p>
+</section>
