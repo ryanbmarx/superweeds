@@ -1,0 +1,5 @@
+<div id="{{ row.id }}" class='blurb-wrapper'>
+	<h3>{{ row.label|process_text }}</h3>
+	{{ row.text|split_peas|process_text }}
+	{% include "_graphic_" ~ row.id ~ ".html" ignore missing %}
+</div>
