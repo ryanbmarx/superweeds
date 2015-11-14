@@ -18,25 +18,38 @@ $(document).ready(function(){
 		var timedStickFarm = _.debounce(stickFarm, 300);
 		$(window).resize(timedStickFarm);
 
+		console.log("Farmbg ,"$('.farm-bg').height());
 
-		var offsetPosition = $('.farm-inner .farm-bg').height() + $('.navbar-fixed-top').height();
-		console.log('Waypoints offset is ' + offsetPosition);
-		// This is the basic waypoints init.
-		// var waypoint = new Waypoint({
-		// 	element: document.getElementsByClassName('blurb-wrapper'),
-		// 	handler: function() {
-		// 		console.log(this);
-		// 	}
-		// })
-	var waypoints = $('.blurb-wrapper').waypoint({
-		handler:function(direction){
-			var triggeredPoint = this.element.id
-			$('body').attr('data-triggered', triggeredPoint);
-			$('.blurb-wrapper.active').removeClass('active');
-			$(this.element).addClass('active');
+		var offsetDown = $('.farm-bg').height()/2 + $('.navbar-fixed-top').height();
+
+		console.log('Waypoints offsetDown is ' + offsetDown);
+
+		var waypointsDown = $('.blurb-wrapper').waypoint(function(direction){
 			console.log(this.element.id,direction);
-		}, offset:offsetPosition
-	});
+			if(direction == "down"){
+				var triggeredPoint = this.element.id
+				$('body').attr('data-triggered', triggeredPoint);
+				$('.blurb-wrapper.active').removeClass('active');
+				$(this.element).addClass('active');
+			}
+		}, {
+			offset:offsetDown,
+			continuous: false
+		});
+		var waypointsUp = $('.blurb-wrapper').waypoint(function(direction){
+			console.log(this.element.id,direction);
+			if(direction == "up"){
+				var triggeredPoint = this.element.id
+				$('body').attr('data-triggered', triggeredPoint);
+				$('.blurb-wrapper.active').removeClass('active');
+				$(this.element).addClass('active');
+			}
+		}, {
+			offset:function(){
+				return (-this.element.clientHeight) + offsetDown;
+			},
+			continuous: false
+		});
 
 
 /*
@@ -54,6 +67,6 @@ $(document).ready(function(){
 		});
 	}, {offset:wayOffset});
 
-	*/
+*/
 
-	});
+});
