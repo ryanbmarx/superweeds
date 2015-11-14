@@ -4,3 +4,5 @@
 *.swp
 node_modules
 .sass-cache
+sass/*.css
+sass/*.map
