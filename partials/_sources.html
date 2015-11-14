@@ -11,7 +11,7 @@
             {% if row.link %}
                 <a href="row.link" target="_blank">
             {% endif %}
-            {{ row.name }}{% if not loop.last %}, {% endif %}
+            {{ row.name }}{% if not loop.last %}; {% endif %}
             {% if row.link %}
                 </a>
             {% endif %}
