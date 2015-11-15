@@ -7,7 +7,8 @@
     <div class='farm-outer'>
         {% include "_social_row.html" %}
         <div class='farm-inner'>
-            <img class='farm-bg' src="http://fillmurray.com/900/600" />
+            <img id='sprayer' src="img/sprayer.png" />
+
         </div>
 <!--         <div class="advert col-xs-12 col-sm-4" data-ad-type="shrinky-cube"></div>-->
 </div>
@@ -34,6 +35,7 @@
         </div>
     </div>
 </div>
+<div id="tooltip"></div>
 
 </article>
 {% endblock content %}
@@ -45,12 +47,13 @@
 
 {% block scripts %}
 {{ super() }}
-<script type="text/javascript">
-    {#var HT_PLANTED = {{ ht_planted|jsonify }};#}
+<script id="ht_planted_data">
+    var HT_PLANTED = {{ ht_planted|jsonify }};
 </script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.js"></script>
 <script type="text/javascript" src="http://{{ ROOT_URL }}/js/lib/d3.chart.min.js"></script>
-<script type="text/javascript" src="http://{{ ROOT_URL }}/js/jquery.waypoints.min.js"></script>
+<script type="text/javascript" src="http://{{ ROOT_URL }}/js/lib/jquery.waypoints.min.js"></script>
+<script type="text/javascript" src="http://{{ ROOT_URL }}/js/src/glyphosate-ready-chart.js"></script>
 <script type="text/javascript" src="http://{{ ROOT_URL }}/js/app.min.js"></script>
 {% endblock scripts %}
 
