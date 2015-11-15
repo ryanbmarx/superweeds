@@ -1,0 +1,48 @@
+@keyframes pulse-to-left {
+	0%{
+	    transform: translate(0,0);
+	    -webkit-transform: translate(0,0);
+
+	}
+	50%{
+		    transform: translate(-3px,0);
+	    -webkit-transform: translate(-3px,0);
+	}
+
+	100%{
+		    transform: translate(0,0);
+	    -webkit-transform: translate(0,0);
+	}
+
+}
+
+@keyframes spraying-sprayer {
+	0%{
+		opacity:0;
+	    transform: translate(0,0);
+	    -webkit-transform: translate(0,0);
+
+	}
+	4%{
+		opacity:1;
+	}
+
+	100%{
+		opacity:1;
+	    transform: translate(-290%,176%);
+	    -webkit-transform: translate(-290%,176%);
+	}
+
+}
+
+
+body[data-triggered='expensive-weed-control']{
+	#sprayer{
+		opacity:1;
+		animation-duration: 16s;
+		// animation-duration: 3s; //debugger
+		animation-name: spraying-sprayer;
+		animation-iteration-count: infinite;
+		animation-delay:0;
+	}
+}

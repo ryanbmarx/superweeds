@@ -3,13 +3,24 @@ $farm_width_large:700px;
 $farm_width_medium:500px;
 $farm_width_small:400px;
 
+// IMPORTS
+
+@import "keys";
+@import "animations";
+
+// MIXINS
+@mixin sans-serif-type(){
+	font-family:"Arial", sans-serif;
+	font-size: 14px;
+	line-height:1.3em;
+}
+
 html, body{
 	background:white;
 }
 
 .farm-outer{
 	width:$farm_width_large;
-	background: red;
 	transition: all 150ms;
 	&.sticky{
 		position: fixed;
@@ -19,9 +30,24 @@ html, body{
 	.farm-inner{
 		width:100%;
 		height:0;
-		padding-bottom: 60%; 
-		overflow: hidden;
-		margin-bottom: 35px;
+		padding-bottom: 61%; 
+		// overflow: hidden;
+		// margin-bottom: 35px;
+		margin-top:10px;
+		background: url('../img/farm-base.png') yellow;
+		background-size: cover;
+		position:relative;
+		img{
+			opacity:0;
+			transition:opacity 200ms ease;
+			position:absolute; 
+		}
+
+		#sprayer{
+			width:189px;
+			top:35%;
+			left:45%;
+		}
 	}
 
 }
@@ -47,14 +73,44 @@ html, body{
 	border-bottom:1px solid #aaa;
 	transition: all 350ms;
 	background: transparent;
+
+	.blurb-label{
+		position: relative;
+		&:before{
+			content:"\f104";
+			font-family: 'FontAwesome';
+			font-size:45px;
+			font-weight: normal;
+			font-style: normal;
+			text-decoration: inherit;
+			-webkit-font-smoothing: antialiased;
+			margin:-.30em 0 0 0;
+			opacity: 0;
+			transition: all 300ms;
+			-webkit-transition: all 300ms;
+			position: absolute;
+			// animation-name: pulse-to-left;
+			animation-duration: 3s;
+			animation-iteration-count: infinite;
+
+		}
+	}
 	&.active{
 		background: #ffffaa;
 		transition: all 200ms;
+		.blurb-label{
+			&:before{
+				margin-left:-25px;
+				opacity: 1;
+				transition: all 300ms;
+				-webkit-transition: all 300ms;
+			}
+		}
 	}
 	
-p{
-	margin: 8.5px 0 0 0;
-}
+	p{
+		margin: 8.5px 0 0 0;
+	}
 	&:last-child{
 		margin-bottom:0;
 		padding-bottom:0;
@@ -70,22 +126,58 @@ p{
 	}
 }
 
+figure.chart-wrapper{
+	padding:0 0 0 0;
+	margin: 20px 0 0 0;
+	border:none;
+	.chart-label{
+		@include sans-serif-type();
+		font-weight: bold;
+		margin:0;
+	}
+	.chart-sub-label{
+		@extend .chart-label;
+		font-weight: normal;
+		font-style: italic;
+
+	}
+
+	.chart{
+		border:1px solid black;
+		margin-top:10px;
+	}
+}
+
 @media all and (max-width:1200px){
 	.farm-outer{
 		width:$farm_width_medium;
+		.farm-inner{
+			#sprayer{
+				width:134px;
+			}
+		}
 	}
 	.scroller-outer{
 		margin-left:$farm_width_medium;
 	}
+
+
 }
 
 @media all and (max-width:991px){
 	.farm-outer{
 		width:$farm_width_small;
+		.farm-inner{
+			#sprayer{
+				width:110px;
+			}
+		}
 	}
 	.scroller-outer{
 		margin-left:$farm_width_small;
 	}
+
+
 }
 
 @media all and (max-width: 767px){
