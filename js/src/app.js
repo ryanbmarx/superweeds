@@ -18,10 +18,7 @@ $(document).ready(function(){
 		var timedStickFarm = _.debounce(stickFarm, 300);
 		$(window).resize(timedStickFarm);
 
-		console.log("Farmbg ,"$('.farm-bg').height());
-
-		var offsetDown = $('.farm-bg').height()/2 + $('.navbar-fixed-top').height();
-
+		var offsetDown = $('.farm-inner').outerHeight()/2 + $('.navbar-fixed-top').height();
 		console.log('Waypoints offsetDown is ' + offsetDown);
 
 		var waypointsDown = $('.blurb-wrapper').waypoint(function(direction){
