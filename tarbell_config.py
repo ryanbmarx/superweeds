@@ -4,9 +4,14 @@
 Tarbell project configuration
 """
 
-
+# Need these two to turn the Google dump into nice JSON
+import json
 from flask import Blueprint
+
+
 import locale
+
+from markupsafe import Markup
 
 # Google spreadsheet key
 SPREADSHEET_KEY = "1n4L0rZzH52SEMI8s-KhjkuVVlVSiKxfw5ldkowFkZRA"
@@ -54,6 +59,13 @@ DEFAULT_CONTEXT = {
 }
 
 blueprint = Blueprint('split_peas', __name__)
+
+@blueprint.app_template_filter('jsonify')
+def jsonify_filter(data):
+    return Markup(json.dumps(data))
+
+
+
 @blueprint.app_template_filter('split_peas')
 def split_peas(text):
     text = text.split('\n')
