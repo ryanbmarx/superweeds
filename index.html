@@ -2,38 +2,55 @@
 
 {% block content %}
 <article>
-    <div class="advert col-xs-12 col-sm-4" data-ad-type="shrinky-cube"></div>
-    <section id='intro'>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="advert top-ad" data-ad-type="leaderboard"></div>
-                    {% include "_social_row.html" %}
-                    <h1 itemprop="headline">{{ headline }}</h1>
-                    <h2 itemprop="headline">{{ dek }}</h2>
-                    {% include "_bylines.html" %}
-                    {{ chatter|split_peas|process_text }}   
-                </div>
-            </div>
+<!--     <div class="advert top-ad" data-ad-type="leaderboard"></div>-->        
+<div class="container">
+    <div class='farm-outer'>
+        {% include "_social_row.html" %}
+        <div class='farm-inner'>
+            <img class='farm-bg' src="http://fillmurray.com/900/600" />
         </div>
-    </section>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
+<!--         <div class="advert col-xs-12 col-sm-4" data-ad-type="shrinky-cube"></div>-->
+</div>
+    <div class='scroller-outer'>
+        <div class='scroller-inner'>
+            <section id='intro'>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="advert col-xs-12 col-sm-4" data-ad-type="shrinky-cube"></div>
+                        <div class='clearfix'></div>
+                        <h1 itemprop="headline">{{ headline }}</h1>
+                        <h2 itemprop="headline">{{ dek }}</h2>
+                        {% include "partials/_bylines.html" %}
+                        {{ chatter|split_peas|process_text }}   
+                    </div>
+                </div>
+            </section>
+            <section id='blurbs'>
+                {% for row in blurbs|sort(attribute='display_order') %}
+                {% include "partials/_blurb_template.html" %}
+                {% endfor %}
+            </section>
             {% include "partials/_sources.html" %}
-            </div>
         </div>
     </div>
+</div>
+
 </article>
 {% endblock content %}
 
 {% block css %}
 {{ super() }}
-<link rel="stylesheet" type="text/css" href="css/styles.css">
+<link rel="stylesheet" type="text/css" href="http://{{ ROOT_URL }}/css/styles.css">
 {% endblock css %}
 
-{% block library_scripts %}
+{% block scripts %}
 {{ super() }}
-<script type="text/javascript" src="js/app.min.js"></script>
-{% endblock library_scripts %}
+<script type="text/javascript">
+    {#var HT_PLANTED = {{ ht_planted|jsonify }};#}
+</script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.js"></script>
+<script type="text/javascript" src="http://{{ ROOT_URL }}/js/lib/d3.chart.min.js"></script>
+<script type="text/javascript" src="http://{{ ROOT_URL }}/js/jquery.waypoints.min.js"></script>
+<script type="text/javascript" src="http://{{ ROOT_URL }}/js/app.min.js"></script>
+{% endblock scripts %}
 
