@@ -7,8 +7,16 @@
     <div class='farm-outer'>
         {% include "_social_row.html" %}
         <div class='farm-inner'>
-            <img id='sprayer' src="img/sprayer.png" />
-
+            <img id='sprayer' class='animation-component' src="img/sprayer.png" />
+            <img id='sprayer-spray' class='animation-component'  src="img/spray.png" />
+            <div id='alive1' class='alive animation-component' ></div>
+            <!-- <div id='dead1' class='dead animation-component' ></div> -->
+            <div id='alive2' class='alive animation-component' ></div>
+            <div id='dead2' class='dead animation-component' ></div>
+            <div id='alive3' class='alive animation-component' ></div>
+            <div id='dead3' class='dead animation-component' ></div>
+            <div id='alive4' class='alive animation-component' ></div>
+            <div id='dead4' class='dead animation-component' ></div>
         </div>
 <!--         <div class="advert col-xs-12 col-sm-4" data-ad-type="shrinky-cube"></div>-->
 </div>
@@ -17,8 +25,8 @@
             <section id='intro'>
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="advert col-xs-12 col-sm-4" data-ad-type="shrinky-cube"></div>
-                        <div class='clearfix'></div>
+<!--                         <div class="advert col-xs-12 col-sm-4" data-ad-type="shrinky-cube"></div>
+ -->                        <div class='clearfix'></div>
                         <h1 itemprop="headline">{{ headline }}</h1>
                         <h2 itemprop="headline">{{ dek }}</h2>
                         {% include "partials/_bylines.html" %}

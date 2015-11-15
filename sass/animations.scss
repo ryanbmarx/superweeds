@@ -1,3 +1,19 @@
+@mixin fill-mode($direction){
+	@if $direction == "f"{
+		animation-fill-mode: forwards;
+		-webkit-animation-fill-mode: forwards;
+		-moz-animation-fill-mode: forwards;
+		-ie-animation-fill-mode: forwards;
+		-o-animation-fill-mode: forwards;
+	} else {
+		animation-fill-mode: backwards;
+		-webkit-animation-fill-mode: backwards;
+		-moz-animation-fill-mode: backwards;
+		-ie-animation-fill-mode: backwards;
+		-o-animation-fill-mode: backwards;
+	}
+}
+
 @keyframes pulse-to-left {
 	0%{
 	    transform: translate(0,0);
@@ -29,20 +45,115 @@
 
 	100%{
 		opacity:1;
-	    transform: translate(-290%,176%);
-	    -webkit-transform: translate(-290%,176%);
+	    transform: translate(-320%,201%);
+	    -webkit-transform: translate(-320%,201%);
+	}
+}
+
+@keyframes spraying-spray {
+	0%{
+		opacity:0;
+	    transform: translate(0,0);
+	    -webkit-transform: translate(0,0);
+
+	}
+	20%{
+		opacity:.75;
+	}
+	50%{
+		opacity: .75;
+	}
+	100%{
+		opacity:0;
+	    transform: translate(-300%,128%);
+	    -webkit-transform: translate(-300%,128%);
+	}
+}
+
+@keyframes weed-die {
+	0%{
+		background-position:0;
+
+	}	
+	100%{
+		background-position:103%;
+		transform:scale(.97);
+		-webkit-transform:scale(.97);
+	}
+}
+
+@keyframes weed-live {
+	0%{
+		transform:scale(1);
+		-webkit-transform:scale(1);
 	}
 
+	
+	70% {
+		transform:scale(1.05);
+		-webkit-transform:scale(1.05);
+	}
+
+	85%{
+		transform:scale(1);
+		-webkit-transform:scale(1);
+	}
+
+	100%{
+		transform:scale(1.05);
+		-webkit-transform:scale(1.05);
+	}
 }
 
 
 body[data-triggered='expensive-weed-control']{
 	#sprayer{
+		transition:all 200ms;
+		-webkit-transition:all 200ms;
 		opacity:1;
 		animation-duration: 16s;
-		// animation-duration: 3s; //debugger
 		animation-name: spraying-sprayer;
 		animation-iteration-count: infinite;
 		animation-delay:0;
+		// animation-duration: 3s; //debugger
+		// animation-iteration-count: 1; //debugger
+
+	}
+	#sprayer-spray{
+		transition:all 200ms;
+		-webkit-transition:all 200ms;
+		opacity:1;
+		animation-name: spraying-spray;
+		animation-duration: 16s;
+		animation-iteration-count: infinite;
+		animation-delay:0;
+		// animation-timing-function:'easeOutElastic';
+		// animation-duration: 3s; //debugger
+		// animation-iteration-count: 1; //debugger
+
+	}
+
+	#alive1{
+		opacity:1;
+		transition:all 200ms;
+		-webkit-transition:all 200ms;
+		animation-duration: .001s;
+		animation-name: weed-die;
+		animation-iteration-count: 1;
+		animation-delay:5s;
+		@include fill-mode('f');
+
+	}
+
+		#alive2{
+		opacity:1;
+		transition:all 200ms;
+		-webkit-transition:all 200ms;
+		animation-duration: .65s;
+		animation-name: weed-live;
+		animation-iteration-count: 1;
+		animation-delay:2s;
+		// animation-timing-function:'easeOutElastic';
+		// @include fill-mode('f');
 	}
 }

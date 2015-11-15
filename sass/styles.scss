@@ -37,7 +37,7 @@ html, body{
 		background: url('../img/farm-base.png') yellow;
 		background-size: cover;
 		position:relative;
-		img{
+		.animation-component{
 			opacity:0;
 			transition:opacity 200ms ease;
 			position:absolute; 
@@ -47,10 +47,46 @@ html, body{
 			width:189px;
 			top:35%;
 			left:45%;
+			z-index:1100;
 		}
-	}
+		#sprayer-spray{
+		    margin-left: 53.7%;
+		    margin-top: 9.7%;
+		    z-index:1000;
+		}
+		#alive1{top:46%;left:10%;}
+		#dead1{@extend #alive1;}
 
+		#alive2{top:30%;left:38%;}
+		#dead2{@extend #alive2;}
+
+		#alive3{top:58%;left:3%;}
+		#dead3{@extend #alive3;}
+
+		#alive4{top:36%;left:50%;}
+		#dead4{@extend #alive4;}
+
+	}
 }
+
+.weed{
+    width: 65px;
+    height: 120px;
+    background: url("../img/weeds.png") no-repeat;
+    opacity: 0;
+    transition:all 200ms;
+	-webkit-transition:all 200ms;
+}
+
+.alive{
+	@extend .weed;
+}
+
+.dead{
+	@extend .weed;
+	// background-position: 103%;
+}
+
 .scroller-outer{
 	// width:100%-$farm_width;
 	margin-left:$farm_width_large;
@@ -92,7 +128,6 @@ html, body{
 			// animation-name: pulse-to-left;
 			animation-duration: 3s;
 			animation-iteration-count: infinite;
-
 		}
 	}
 	&.active{
@@ -112,7 +147,7 @@ html, body{
 		margin: 8.5px 0 0 0;
 	}
 	&:last-child{
-		margin-bottom:0;
+		margin-bottom:25px;
 		padding-bottom:0;
 		border-bottom: none;
 	}
@@ -152,9 +187,8 @@ figure.chart-wrapper{
 	.farm-outer{
 		width:$farm_width_medium;
 		.farm-inner{
-			#sprayer{
-				width:134px;
-			}
+			#sprayer{width:27%;}
+			#sprayer-spray{width:29.5%;}
 		}
 	}
 	.scroller-outer{
@@ -168,9 +202,7 @@ figure.chart-wrapper{
 	.farm-outer{
 		width:$farm_width_small;
 		.farm-inner{
-			#sprayer{
-				width:110px;
-			}
+			#sprayer{width:28%;}
 		}
 	}
 	.scroller-outer{
