@@ -1,0 +1,20 @@
+.farm-outer{
+		width:$farm_width_medium;
+		.farm-inner{
+			#sprayer{width:27%;}
+			#sprayer-spray{width:29.5%;}
+			#tree{
+				transform: scale(.8);
+				-webkit-transform: scale(.8);
+				top: 22%;
+				left: 87%;
+			}
+			#truck{top:98%};
+		}
+	}
+	.scroller-outer{margin-left:$farm_width_medium;}
+
+	%plant{
+		transform: translate(-17px, -19px) scale(0.75);
+		-webkit-transform: translate(-17px, -19px) scale(0.75);
+	}

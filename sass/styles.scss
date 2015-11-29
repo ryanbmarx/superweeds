@@ -3,6 +3,9 @@ $farm_width_large:700px;
 $farm_width_medium:500px;
 $farm_width_small:400px;
 
+$corn_color: #FFD773;
+$soy_color: #6F8D5C;
+$cotton_color: #DFDFDF;
 // IMPORTS
 
 @import "keys";
@@ -22,6 +25,8 @@ html, body{
 .farm-outer{
 	width:$farm_width_large;
 	transition: all 150ms;
+	border-radius: 5px;
+    overflow: hidden;
 	&.sticky{
 		position: fixed;
 		top:42px;
@@ -34,57 +39,235 @@ html, body{
 		// overflow: hidden;
 		// margin-bottom: 35px;
 		margin-top:10px;
-		background: url('../img/farm-base.png') yellow;
+		background: url('../img/farm-base2.png') yellow;
 		background-size: cover;
 		position:relative;
-		.animation-component{
-			opacity:0;
-			transition:opacity 200ms ease;
-			position:absolute; 
-		}
 
-		#sprayer{
-			width:189px;
-			top:35%;
-			left:45%;
-			z-index:1100;
-		}
-		#sprayer-spray{
-		    margin-left: 53.7%;
-		    margin-top: 9.7%;
-		    z-index:1000;
-		}
-		#alive1{top:46%;left:10%;}
-		#dead1{@extend #alive1;}
-
-		#alive2{top:30%;left:38%;}
-		#dead2{@extend #alive2;}
-
-		#alive3{top:58%;left:3%;}
-		#dead3{@extend #alive3;}
-
-		#alive4{top:36%;left:50%;}
-		#dead4{@extend #alive4;}
 
 	}
 }
 
-.weed{
-    width: 65px;
-    height: 120px;
-    background: url("../img/weeds.png") no-repeat;
-    opacity: 0;
-    transition:all 200ms;
-	-webkit-transition:all 200ms;
+.animation-component{
+	opacity:0;
+	transition:opacity 200ms ease;
+	position:absolute; 
+}
+#sprayer, #sprayer2, #sprayer3{
+	width:189px;
+	top:35%;
+	left:45%;
+	z-index:1100;
+}
+#sprayer-spray, #sprayer-spray2, #sprayer-spray3{
+	margin-left: 53.7%;
+	margin-top: 9.7%;
+	z-index:1000;
 }
 
-.alive{
-	@extend .weed;
+%bird{
+	@extend .animation-component;
+	width:27px;
+	height:27px;
+	background: url('../img/birds.png') no-repeat;
+	top: 31%;
+	left: 92%;
 }
 
-.dead{
-	@extend .weed;
-	// background-position: 103%;
+#bird1{
+	@extend %bird;
+	background-position:0 4px;
+}
+#bird2{
+	@extend %bird;
+	background-position:-29px 4px;
+}
+#bird3{
+	@extend %bird;
+	background-position:-58px 4px;
+}
+#bird4{
+	@extend %bird;
+	background-position:-84px 4px;
+}
+#bird5{
+	@extend %bird;
+	background-position:-113px 4px;
+}
+#bird6{
+	@extend %bird;
+	background-position:-141px 4px;
+}
+
+#tree{
+	opacity:1;
+	top: 26%;
+	left: 89%;
+}
+#truck{
+	// opacity:1;
+	top:104%;
+}
+
+%plant{
+	@extend .animation-component;
+	background-image: url("../img/plants.png");
+	background-repeat:no-repeat;
+	width: 64px;
+	height: 113px;
+	opacity:0;
+}
+
+$alive_y:-10px;
+
+%corn{
+	@extend %plant;
+	background-position: -328px $alive_y;
+}
+
+%weed1{
+	@extend %plant;
+	background-position: -88px $alive_y;
+	height: 122px;
+}
+
+%weed2{
+	@extend %plant;	
+	background-position: -247px $alive_y;
+}
+
+%weed3{
+	@extend %plant;
+	background-position: -3px $alive_y;
+	width:71px;
+}
+
+#corn1{
+	@extend %corn;	
+	top:70%;
+	left:1%;
+
+}
+
+#corn2{
+	@extend %corn;
+	top: 41%;
+	left: 11%;
+}
+
+#corn3{
+	@extend %corn;
+	top: 38%;
+	left: 28%;
+}
+
+#corn4{
+	@extend %corn;
+	top: 27.5%;
+	left: 53.9%;
+}
+
+#weed1{
+	@extend %weed1;
+	top: 62%;
+	left: 11%;
+}
+
+#weed2{
+	@extend %weed2;
+	top: 45%;
+	left: 4%;
+
+}
+
+#weed3{
+	@extend %weed3;
+	top: 53%;
+	left: 31%;
+}
+
+#weed4{
+	@extend %weed1;
+	top:1%;
+	left:1%;
+}
+
+#weed5{
+	@extend %weed2;
+	top: 43%;
+	left: 21%;
+}
+
+#weed6{
+	@extend %weed3;
+	top: 21%;
+	left: 46%;
+}
+
+#weed7{
+	@extend %weed1;
+
+	top: 56.5%;
+	left: 21%;
+}
+
+#weed8{
+	@extend %weed2;
+	top:1%;
+	left:1%;
+}
+
+#weed9{
+	@extend %weed3;
+	top: 34%;
+	left: 35%;
+}
+
+#weed10{
+	@extend %weed1;
+	top: 44%;
+	left: 42%;
+}
+
+#weed11{
+	@extend %weed2;
+	top: 32%;
+	left: 58.5%;
+}
+
+#weed12{
+	@extend %weed3;
+	top: 33%;
+	left: 67%;
+}
+#weed13{
+	@extend %weed1;
+	top: 37.3%;
+	left: 53%;
+}
+
+%can{
+	@extend .animation-component;
+	background:url('../img/canisters.png') top no-repeat;
+	width: 45px;
+	height:70px;
+	background-size: 322%;
+	z-index:1100;
+
+}
+
+#can1{
+	@extend %can;
+	background-position: (1px,0);
+}
+
+#can2{
+	@extend %can;
+	background-position: (-48px,0);
+}
+
+#can3{
+	@extend %can;
+	background-position: (-98px,0);
 }
 
 .scroller-outer{
@@ -184,48 +367,14 @@ figure.chart-wrapper{
 }
 
 @media all and (max-width:1200px){
-	.farm-outer{
-		width:$farm_width_medium;
-		.farm-inner{
-			#sprayer{width:27%;}
-			#sprayer-spray{width:29.5%;}
-		}
-	}
-	.scroller-outer{
-		margin-left:$farm_width_medium;
-	}
-
-
+	@import "_max_width_1200px";
 }
 
 @media all and (max-width:991px){
-	.farm-outer{
-		width:$farm_width_small;
-		.farm-inner{
-			#sprayer{width:28%;}
-		}
-	}
-	.scroller-outer{
-		margin-left:$farm_width_small;
-	}
-
-
+	@import "_max_width_991px";
 }
 
 @media all and (max-width: 767px){
-	.farm-outer{
-		width:100%;
-		.sticky{
-			position:static;
-			width:100%;
-		}
-	}
-	.scroller-outer{
-		margin-left:0;
-		.scroller-inner{
-			padding-left:0;
-		}
-	}
-
+	@import "_max_width_767px";
 
 }

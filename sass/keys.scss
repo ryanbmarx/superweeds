@@ -23,7 +23,18 @@ ul.key{
 	height:10px;
 	width:10px;
 	margin:0 5px 0 0;
-	border-radius:50%
+	border-radius:50%;
+	border:1px solid #aaa;
+
+	&.corn{
+		background-color:$corn_color;
+	}
+	&.soy{
+		background-color:$soy_color;
+	}
+	&.cotton{
+		background-color:$cotton_color;
+	}
 }
 // This flattens a span.box into a rectangle resembling a line segment. 
 // This is good for line charts.
