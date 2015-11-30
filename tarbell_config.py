@@ -17,7 +17,7 @@ from markupsafe import Markup
 SPREADSHEET_KEY = "1n4L0rZzH52SEMI8s-KhjkuVVlVSiKxfw5ldkowFkZRA"
 
 # Exclude these files from publication
-EXCLUDES = ['*.md', 'requirements.txt', 'node_modules', 'sass', 'js/src', 'package.json', 'Gruntfile.json']
+EXCLUDES = ['*.md', '*.ai', 'requirements.txt', 'node_modules', 'sass', 'js/src', 'package.json', 'Gruntfile.json']
 
 # Spreadsheet cache lifetime in seconds. (Default: 4)
 # SPREADSHEET_CACHE_TTL = 4
