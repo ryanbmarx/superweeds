@@ -2,46 +2,80 @@
 
 {% block content %}
 <article>
-<!--     <div class="advert top-ad" data-ad-type="leaderboard"></div>-->        
-<div class="container">
-    <div class='farm-outer'>
-        {% include "_social_row.html" %}
-        <div class='farm-inner'>
-            <img id='sprayer' class='animation-component' src="img/sprayer.png" />
-            <img id='sprayer-spray' class='animation-component'  src="img/spray.png" />
-            <div id='alive1' class='alive animation-component' ></div>
-            <!-- <div id='dead1' class='dead animation-component' ></div> -->
-            <div id='alive2' class='alive animation-component' ></div>
-            <div id='dead2' class='dead animation-component' ></div>
-            <div id='alive3' class='alive animation-component' ></div>
-            <div id='dead3' class='dead animation-component' ></div>
-            <div id='alive4' class='alive animation-component' ></div>
-            <div id='dead4' class='dead animation-component' ></div>
-        </div>
-<!--         <div class="advert col-xs-12 col-sm-4" data-ad-type="shrinky-cube"></div>-->
-</div>
-    <div class='scroller-outer'>
-        <div class='scroller-inner'>
-            <section id='intro'>
-                <div class="row">
-                    <div class="col-md-12">
-<!--                         <div class="advert col-xs-12 col-sm-4" data-ad-type="shrinky-cube"></div>
- -->                        <div class='clearfix'></div>
-                        <h1 itemprop="headline">{{ headline }}</h1>
-                        <h2 itemprop="headline">{{ dek }}</h2>
-                        {% include "partials/_bylines.html" %}
-                        {{ chatter|split_peas|process_text }}   
-                    </div>
+    <!--     <div class="advert top-ad" data-ad-type="leaderboard"></div>-->        
+    <div class="container">
+        <div class='farm-outer'>
+            {% include "_social_row.html" %}
+            <div class='farm-inner'>
+                <img id='sprayer' class='animation-component' src="img/sprayer.png" />
+                <img id='sprayer-spray' class='animation-component'  src="img/spray.png" />
+                <div id='bird1' class='' ></div>
+                <div id='bird2' class='' ></div>
+                <div id='bird3' class='' ></div>
+                <!-- <div id='bird4' class='' ></div> -->
+                <div id='bird5' class='' ></div>
+                <!-- <div id='bird6' class='' ></div> -->
+                <img id='tree' src='img/tree.png' class="animation-component" />
+                <img id='truck' src='img/truck.png' class="animation-component" />
+                <div class='alive'>
+                    <div class='corn1' data-tooltip="CORN" ></div>
+                    <div class='corn2' data-tooltip="CORN"  ></div>
+                    <div class='corn3' data-tooltip="CORN"  ></div>
+                    <div class='weed1'  ></div>
+                    <div class='weed2'  ></div>
+                    <div class='weed5'  ></div>
+                    <div class='weed6'  ></div>
+                    <div class='weed7'  ></div>
+                    <div class='weed9'  ></div>
+                    <div class='weed10'  ></div>
+                    <div class='weed11'  ></div>
+                    <div class='weed12'  ></div>
+                    <div class='weed13'  ></div>
                 </div>
-            </section>
-            <section id='blurbs'>
-                {% for row in blurbs|sort(attribute='display_order') %}
-                {% include "partials/_blurb_template.html" %}
-                {% endfor %}
-            </section>
-            {% include "partials/_sources.html" %}
+               <div class='dead'>
+                    <div class='corn1' data-tooltip="CORN"  ></div>
+                    <div class='corn2' data-tooltip="CORN"  ></div>
+                    <div class='corn3' data-tooltip="CORN"  ></div>
+                    <div class='weed1'  ></div>
+                    <div class='weed2'  ></div>
+                    <div class='weed5'  ></div>
+                    <div class='weed6'  ></div>
+                    <div class='weed7'  ></div>
+                    <div class='weed9'  ></div>
+                    <div class='weed10'  ></div>
+                    <div class='weed11'  ></div>
+                    <div class='weed12'  ></div>
+                    <div class='weed13'  ></div>
+                </div>
+                <div id='can1'  ></div>
+                <div id='can2'  ></div>
+                <div id='can3'  ></div>
+                <div id='can4'  ></div>
+            </div>
+            <!--         <div class="advert col-xs-12 col-sm-4" data-ad-type="shrinky-cube"></div>-->
         </div>
-    </div>
+        <div class='scroller-outer'>
+            <div class='scroller-inner'>
+                <section id='intro'>
+                    <div class="row">
+                        <div class="col-md-12">
+<!--                         <div class="advert col-xs-12 col-sm-4" data-ad-type="shrinky-cube"></div>
+-->                        <div class='clearfix'></div>
+<h1 itemprop="headline">{{ headline }}</h1>
+<h2 itemprop="headline">{{ dek }}</h2>
+{% include "partials/_bylines.html" %}
+{{ chatter|markdown }}   
+</div>
+</div>
+</section>
+<section id='blurbs'>
+    {% for row in blurbs|sort(attribute='display_order') %}
+    {% include "partials/_blurb_template.html" %}
+    {% endfor %}
+</section>
+{% include "partials/_sources.html" %}
+</div>
+</div>
 </div>
 <div id="tooltip"></div>
 
@@ -58,10 +92,10 @@
 <script id="ht_planted_data">
     var HT_PLANTED = {{ ht_planted|jsonify }};
 </script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.js"></script>
-<script type="text/javascript" src="http://{{ ROOT_URL }}/js/lib/d3.chart.min.js"></script>
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.js"></script> -->
+<!-- <script type="text/javascript" src="http://{{ ROOT_URL }}/js/lib/d3.chart.min.js"></script> -->
 <script type="text/javascript" src="http://{{ ROOT_URL }}/js/lib/jquery.waypoints.min.js"></script>
-<script type="text/javascript" src="http://{{ ROOT_URL }}/js/src/glyphosate-ready-chart.js"></script>
+<!-- <script type="text/javascript" src="http://{{ ROOT_URL }}/js/src/glyphosate-ready-chart.js"></script> -->
 <script type="text/javascript" src="http://{{ ROOT_URL }}/js/app.min.js"></script>
 {% endblock scripts %}
 
