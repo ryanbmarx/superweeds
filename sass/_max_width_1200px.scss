@@ -1,8 +1,8 @@
 .farm-outer{
 		width:$farm_width_medium;
 		.farm-inner{
-			#sprayer{width:27%;}
-			#sprayer-spray{width:29.5%;}
+			#sprayer, #sprayer2, #sprayer3 {width:27%;}
+			#sprayer-spray, #sprayer-spray2, #sprayer-spray3 {width:29.5%;}
 			#tree{
 				transform: scale(.8);
 				-webkit-transform: scale(.8);
