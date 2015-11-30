@@ -25,7 +25,10 @@ $(document).ready(function(){
 			console.log(this.element.id,direction);
 			if(direction == "down"){
 				var triggeredPoint = this.element.id
-				$('body').attr('data-triggered', triggeredPoint);
+				$('body').attr('data-triggered', "XXX");
+				setTimeout(function() {
+				    $('body').attr('data-triggered', triggeredPoint);
+				},1);
 				$('.blurb-wrapper.active').removeClass('active');
 				$(this.element).addClass('active');
 			}
@@ -37,7 +40,11 @@ $(document).ready(function(){
 			console.log(this.element.id,direction);
 			if(direction == "up"){
 				var triggeredPoint = this.element.id
-				$('body').attr('data-triggered', triggeredPoint);
+				$('body').attr('data-triggered', "XXX");
+				setTimeout(function() {
+				    $('body').attr('data-triggered', triggeredPoint);
+				},1);
+
 				$('.blurb-wrapper.active').removeClass('active');
 				$(this.element).addClass('active');
 			}
