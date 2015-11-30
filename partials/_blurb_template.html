@@ -1,6 +1,6 @@
 <div id="{{ row.id }}" class='blurb-wrapper'>
-	<h3 class='blurb-label'>{{ row.label|process_text }}</h3>
+	<h3 class='blurb-label'>{{ row.label }}</h3>
 	<strong>{{ row.id }}</strong>
-	{{ row.text|split_peas|process_text }}
+	{{ row.text|markdown }}
 	{% include "partials/_" ~ row.id ~ "-chart.html" ignore missing %}
 </div>
