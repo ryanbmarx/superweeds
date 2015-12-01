@@ -1,10 +1,16 @@
 .farm-outer{
-	display:block;
+	display:none;
 }
 .scroller-outer{
 	margin-left:0;
 	.scroller-inner{
 		padding-left:0;
+	}
+}
+
+figure.chart-wrapper{
+	#g-glyphosate-ready-desktop .g-aiPstyle0 {
+		line-height: 25px;
 	}
 }
 

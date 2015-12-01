@@ -1,0 +1,106 @@
+/* HIDE THE STUFF WE DON'T WANT UNLESS WE'RE SEEING PANEL SWITCHER */
+a.panelButton.fwd-back-panelButton, .panel-nav, .select-nav {display:none;}
+/* STYLE THE PANELS FOR MOBILE/NON-SWITCHER FORM */
+.panels{position:relative;width:100%;padding:20px 0;}
+.panel{margin-bottom:25px;padding-bottom:25px;border-bottom:1px solid #aaa;position: relative;padding-top:15px;}
+
+/* CONVERT TO SWITCHER MODE*/
+.go-panels{ 
+	.panel, .panel:last-child{
+		margin:0;
+		padding:0;
+		border-bottom:none;
+		display:none;
+		&:first-child{
+			display:block;
+		}
+	}
+	.select-nav{display:block;margin-top: 15px;text-align: center;border-bottom:1px solid #aaa;padding-bottom: 10px;}
+	.panel-nav{display:block;border-bottom:1px solid #aaa;margin-top:15px;text-align: center;}
+	a.panelButton.fwd-back-panelButton{display:inline;border:1px solid #c7c7c7;float:none;font-size: 16px;padding-top:6px;padding-bottom:6px;margin:0px 5px 0 0 ;}
+}
+
+
+.styled-select{display:inline-block;}
+.styled-select select {background: transparent url('http://photodesk.chicagotribune.com.s3.amazonaws.com/Graphics/graphics-libraries-no-delete/select_arrows.png')  right no-repeat;
+width: 268px;padding: 5px;font-size: 16px;line-height: 1;border: 1px solid #c7c7c7;border-radius: 0;height: 34px;-webkit-appearance: none;font-family: 'Arial', sans-serif;width: 272px;}
+a.panelButton{display: inline-block;padding: 4px 12px;margin-bottom: 0;font-family: Arial,sans-serif;font-size: 13px;line-height: 20px;color:#666;text-align: center;text-transform: uppercase;vertical-align: middle;cursor: pointer;background-color: #fff;border: none;text-decoration: none}
+a.panelButton:hover {color:#555;text-decoration: none;background-color:#ddd;-webkit-transition: background-color .1s linear;-moz-transition: background-color .1s linear;-o-transition: background-color .1s linear;transition: background-color .1s linear;}
+.panelButton.active:hover,.panelButton.active, .panelButton:focus {background-color:#aaa;color:#fff;box-shadow:none;}
+a.panelButton.error.active{background-color:red;color:#fff;}
+a.panelButton.error{color:red;font-weight: bold}
+.panelButton,.panel-nav{-webkit-touch-callout: none;-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;}
+
+.back-forward-wrapper{margin:15px auto 0px auto;text-align: center}
+
+/* THIS IS FOR THE DOTS THAT LET YOU KNOW HOW MANY ITEMS THERE ARE*/
+.dot-indicator-wrapper{text-align:center;margin-bottom:15px;display:none;}
+.dot-indicator-wrapper{display:block;}
+.buttons .dot-indicator-wrapper, .dropdown .dot-indicator-wrapper{display:none;}
+
+span.indicator-dot{
+	height:15px;
+	width:10px;
+	margin-right:3px;
+	display:inline-block;
+}
+
+span.indicator-dot span{
+	display:block;
+	height:5px;
+	width:5px;
+	border-radius: 60%;
+	background-color:black;
+	opacity:.2;
+	margin-top:50%;
+	margin-left:auto;
+	margin-right:auto;
+	margin-bottom:0px;
+	-webkit-transition: all 0.15;
+	-moz-transition: all 0.15s;
+	-o-transition: all 0.15s;
+	transition: all 0.15s;
+
+}
+
+span.indicator-dot.active span{
+	margin:23% auto;
+	height:10px;
+	width:10px;
+	background-color:#000 !important;
+	opacity:1;
+	-webkit-transition: all 0.15 ;
+	-moz-transition: all 0.15s ;
+	-o-transition: all 0.15s ;
+	transition: all 0.15s ;
+
+}
+
+
+/* IF YOU WANT ALL THE NAV STUFF LEFT-ALIGNED, USE THE WRAPPER CLASS OF 'NAV-LEFT' */
+.nav-left.go-panels .panel-nav,
+.nav-left.go-panels .panel-nav,
+.nav-left .dot-indicator-wrapper,
+.nav-left .back-forward-wrapper{text-align: left;}
+
+
+@media all and (max-width: 700px) {
+	.panel{
+		height:auto !important;
+		position:static;
+	}
+	.panel, .go-panels .panel{
+		margin-bottom:25px;
+		padding-bottom:25px;
+		border-bottom:1px solid #aaa;
+		display:block !important;
+		padding-top:0;
+	}
+	.go-panels .panel:last-child{
+		margin:0;padding:0;
+		border-bottom:none;
+	}
+	.go-panels .select-nav, .go-panels .panel-nav, .go-panels a.fwd-back-panelButton, a.fwd-back-panelButton{
+		display:none;
+	}
+}

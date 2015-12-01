@@ -7,6 +7,11 @@ $corn_color: #FFD773;
 $soy_color: #6F8D5C;
 $cotton_color: #DFDFDF;
 $weed_label_color:rgba(255,0,0,.7);
+
+$blurb_wrapper_bg:#ffffcd;
+
+$palmer_sighting: #6f8d5c;
+$palmer_sighting_previous: #b7c6ad;
 // IMPORTS
 
 
@@ -59,14 +64,24 @@ $weed_label_color:rgba(255,0,0,.7);
 	&::before{
 		background-color:$weed_label_color;
 	}
-	// &::after{
-	// 	border-top-color:$weed_label_color;
-	// }
 }
 
-html, body{
-	background:white;
+@import "jquery.makePanels.1.4";
+.panel{
+	background:transparent;
 }
+
+.go-panels {
+	.panel-nav{
+	border-bottom:none;
+	}
+	.panels{
+		padding-top:0;
+	}
+}
+
+html, body{background:white;}
+.advert{margin-bottom: 25px;}
 
 .farm-outer{
 	width:$farm_width_large;
@@ -83,7 +98,7 @@ html, body{
 		overflow: hidden;
 		// margin-bottom: 35px;
 		margin-top:10px;
-		background: url('../img/farm-base2.png') yellow;
+		background: url('../img/farm-base2.png') #eee;
 		background-size: cover;
 		position:relative;
 		border-radius: 10px;
@@ -92,16 +107,21 @@ html, body{
 	}
 }
 
-article#palette {
-	background:grey;
-	*{
-		opacity:1;
-		position:static !important;
-	}
-	%plant{
-		border:1px solid yellow;
-	}
-}
+// article#palette {
+// 	background:grey;
+// 	*{
+// 		opacity:1;
+// 		position:static !important;
+// 	}
+	
+// 	svg *{
+// 		fill:red;
+// 	}
+
+// 	%plant{
+// 		border:1px solid yellow;
+// 	}
+// }
 
 .animation-component{
 	opacity:0;
@@ -538,7 +558,7 @@ $dead_y:-115px;
 		}
 	}
 	&.active{
-		background: #ffffaa;
+		background: $blurb_wrapper_bg;
 		transition: all 200ms;
 		.blurb-label{
 			&:before{
@@ -569,9 +589,15 @@ $dead_y:-115px;
 }
 
 figure.chart-wrapper{
+	max-width:400px;
 	padding:0 0 0 0;
-	margin: 20px 0 0 0;
+	margin: 20px auto 0 auto;
 	border:none;
+	.note{
+		@include sans-serif-type();
+		font-size: 12px;
+		color:#aaa;
+	}
 	.chart-label{
 		@include sans-serif-type();
 		font-weight: bold;
@@ -588,6 +614,21 @@ figure.chart-wrapper{
 		border:1px solid black;
 		margin-top:10px;
 	}
+
+ .g-aiPstyle0 {
+    line-height: 25px;
+}
+#g-glyphosate-ready-desktop{overflow:visible;}
+}
+
+#resistance-spreads-map{
+	.box.sighting{
+		background-color: $palmer_sighting;
+	}
+	.box.previous{
+		background-color: $palmer_sighting_previous;
+	}
+
 }
 
 @media all and (max-width:1200px){
