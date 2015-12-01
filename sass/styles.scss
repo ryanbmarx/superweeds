@@ -589,7 +589,6 @@ $dead_y:-115px;
 }
 
 figure.chart-wrapper{
-	max-width:400px;
 	padding:0 0 0 0;
 	margin: 20px auto 0 auto;
 	border:none;
@@ -620,6 +619,7 @@ figure.chart-wrapper{
 }
 #g-glyphosate-ready-desktop{overflow:visible;}
 }
+#ht-planted-chart{max-width:400px;}
 
 #resistance-spreads-map{
 	.box.sighting{
