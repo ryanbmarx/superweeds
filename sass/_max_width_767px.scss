@@ -1,9 +1,24 @@
-	.farm-outer{
-		display:none;
+.farm-outer{
+	display:block;
+}
+.scroller-outer{
+	margin-left:0;
+	.scroller-inner{
+		padding-left:0;
 	}
-	.scroller-outer{
-		margin-left:0;
-		.scroller-inner{
-			padding-left:0;
-		}
+}
+
+.blurb-wrapper{
+	padding:15px 0 20px 0;
+	&.active{background: transparent;}
+
+.blurb-label{
+	position: relative;
+	&:before{
+		content:"";
 	}
+	
+}
+}
+
+

@@ -6,6 +6,7 @@ $farm_width_small:400px;
 $corn_color: #FFD773;
 $soy_color: #6F8D5C;
 $cotton_color: #DFDFDF;
+$weed_label_color:rgba(255,0,0,.7);
 // IMPORTS
 
 
@@ -25,8 +26,14 @@ $cotton_color: #DFDFDF;
 }
 
 @mixin notooltip(){
-	[data-tooltip]::before,[data-tooltip]::after{
+	[data-tooltip]::before{
 		display:none;
+	}
+}
+
+@mixin showtooltip(){
+	[data-tooltip]::before{
+		display:block;
 	}
 }
 
@@ -37,16 +44,25 @@ $cotton_color: #DFDFDF;
 [data-tooltip]::before{
 	width:66px;
 	left:129%;
-	bottom: 104%;
+	bottom: 60%;
+	display:none;
 	// opacity:0;
 	// transition: opacity 250ms ease;
 	// transition-delay: 3s;
 }
 
 [data-tooltip]::after{
-	bottom:97%;
+	display:none;
 }
 
+[data-tooltip="WEED"], [data-tooltip="DEAD WEED"]{
+	&::before{
+		background-color:$weed_label_color;
+	}
+	// &::after{
+	// 	border-top-color:$weed_label_color;
+	// }
+}
 
 html, body{
 	background:white;
@@ -55,23 +71,22 @@ html, body{
 .farm-outer{
 	width:$farm_width_large;
 	transition: all 150ms;
-	border-radius: 5px;
 	overflow: hidden;
 	&.sticky{
 		position: fixed;
 		top:42px;
-		// left:0;
 	}
 	.farm-inner{
 		width:100%;
 		height:0;
 		padding-bottom: 61%; 
-		// overflow: hidden;
+		overflow: hidden;
 		// margin-bottom: 35px;
 		margin-top:10px;
 		background: url('../img/farm-base2.png') yellow;
 		background-size: cover;
 		position:relative;
+		border-radius: 10px;
 
 
 	}
@@ -93,16 +108,16 @@ article#palette {
 	transition:opacity 200ms ease;
 	position:absolute; 
 }
-#sprayer, #sprayer2, #sprayer3{
+#sprayer{
 	width:189px;
 	top:35%;
 	left:45%;
 	z-index:1100;
 }
-#sprayer-spray, #sprayer-spray2, #sprayer-spray3{
+#sprayer-spray {
 	margin-left: 53.7%;
 	margin-top: 9.7%;
-	z-index:1000;
+	z-index:1300;
 }
 
 %bird{
@@ -139,6 +154,14 @@ article#palette {
 	background-position:-141px 4px;
 }
 
+#seed{
+	width:10px;
+	height:25px;
+	border-radius:50%;
+	background-color:yellowgreen;
+	opacity:0;
+}
+
 #tree{
 	opacity:1;
 	top: 26%;
@@ -156,7 +179,7 @@ article#palette {
 	width: 67px;
 	height: 113px;
 	opacity:0;
-	border:1px solid blue;
+	// border:1px solid blue;
 }
 
 $alive_y:-9px;
@@ -243,6 +266,7 @@ $dead_y:-115px;
 
 	.weed1{
 		@extend %weed1;
+		@include frontrow();
 		top: 62%;
 		left: 11%;
 	}
@@ -280,7 +304,7 @@ $dead_y:-115px;
 
 	.weed7{
 		@extend %weed1;
-
+		@include frontrow();
 		top: 56.2%;
 		left: 21%;
 	}
@@ -293,8 +317,8 @@ $dead_y:-115px;
 
 	.weed9{
 		@extend %weed3;
-top: 23.5%;
-left: 41%;
+		top: 23.5%;
+		left: 41%;
 	}
 
 	.weed10{
@@ -354,6 +378,7 @@ left: 41%;
 
 	.weed1{
 		@extend %weed1_dead;
+		@include frontrow();
 		top: 62%;
 		left: 11%;
 	}
@@ -391,7 +416,7 @@ left: 41%;
 
 	.weed7{
 		@extend %weed1_dead;
-
+		@include frontrow();
 		top: 56.2%;
 		left: 21%;
 	}
@@ -404,8 +429,8 @@ left: 41%;
 
 	.weed9{
 		@extend %weed3_dead;
-top: 23.5%;
-left: 41%;
+		top: 23.5%;
+		left: 41%;
 	}
 
 	.weed10{
@@ -491,7 +516,7 @@ left: 41%;
 	border-bottom:1px solid #aaa;
 	transition: all 350ms;
 	background: transparent;
-
+	.farm-wrapper{display:none;}
 	.blurb-label{
 		position: relative;
 		&:before{
@@ -530,7 +555,7 @@ left: 41%;
 	}
 	&:last-child{
 		margin-bottom:25px;
-		padding-bottom:0;
+		// padding-bottom:0;
 		border-bottom: none;
 	}
 }

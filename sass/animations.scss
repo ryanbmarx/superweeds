@@ -115,7 +115,7 @@
 
 
 body[data-triggered='weeds-bad']{
-
+	@include showtooltip();
 	$weed_random_delay1: random(3000);
 	$weed_random_delay2: random(3000);
 	$weed_random_delay3: random(3000);
@@ -503,7 +503,7 @@ body[data-triggered='resistance-develops']{
 
 	.dead .weed10{
 		z-index:1110;
-		opacity:1;
+		opacity:0;
 		animation-duration: .001s;
 		animation-name: weed-live;
 		animation-iteration-count: 1;
@@ -520,6 +520,11 @@ body[data-triggered='resistance-develops']{
 		animation-iteration-count: infinite;
 		animation-delay:4.5s;
 		// @include fill-mode('f');
+		&::before{
+			content:"Resistant";
+			// opacity:0;
+			display:block;
+		}
 	}
 
 
@@ -592,7 +597,7 @@ body[data-triggered='resistance-develops']{
 // #######################
 
 body[data-triggered='resistance-distills']{
-	@include notooltip();
+	// @include notooltip();
 	$weed_random_delay1: random(3000);
 	$weed_random_delay2: random(3000);
 	$weed_random_delay3: random(3000);
@@ -606,16 +611,21 @@ body[data-triggered='resistance-distills']{
 			animation-name: weed-live;
 			animation-iteration-count: infinite;
 			animation-delay:1s;
-		}	
-	}
+			&::before{
+				content:"Resistant";
+			// opacity:0;
+			display:block;
+		}
+	}	
+}
 
-	#truck{
-		opacity:1;
-		animation-duration: 12s;
-		animation-name: truck-go;
-		animation-iteration-count: 1;
-		animation-delay:10s;
-	}
+#truck{
+	opacity:1;
+	animation-duration: 12s;
+	animation-name: truck-go;
+	animation-iteration-count: 1;
+	animation-delay:10s;
+}
 }
 
 // #######################
@@ -625,8 +635,40 @@ body[data-triggered='resistance-distills']{
 // #######################
 
 body[data-triggered='resistance-spreads']{
-	.alive .corn1{
-		opacity:1;
+	@include notooltip();
+	.alive{
+		.weed12 { 
+			opacity:1;
+			z-index:1110;
+			&::before{
+				content:"Resistant";
+			// opacity:0;
+			display:block;
+		}
+	}	
+}
+
+@keyframes seed-flies{
+	0%{
+		transform: translate(0,0) scale(1) rotate(0);
+		-webkit-transform: translate(0,0) scale(1) rotate(0);
 	}
 
+	100%{
+		transform: translate(700px, -400px) scale(.9) rotate(399grad);
+		-webkit-transform: translate(700px, -400px) scale(.9) rotate(399grad);
+
+	}
+}
+
+#seed{
+	opacity:1;
+	top: 52%;
+	left: 35%;
+	animation-duration: 10s;
+	animation-name: seed-flies;
+	animation-iteration-count: 1;
+	animation-delay:1s;
+
+}
 }
