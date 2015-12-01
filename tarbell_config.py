@@ -7,17 +7,18 @@ Tarbell project configuration
 # Need these two to turn the Google dump into nice JSON
 import json
 from flask import Blueprint
-
-
 import locale
 
+from tarbell.hooks import register_hook
+
 from markupsafe import Markup
+
 
 # Google spreadsheet key
 SPREADSHEET_KEY = "1n4L0rZzH52SEMI8s-KhjkuVVlVSiKxfw5ldkowFkZRA"
 
 # Exclude these files from publication
-EXCLUDES = ['*.md', '*.ai', 'requirements.txt', 'node_modules', 'sass', 'js/src', 'package.json', 'Gruntfile.json']
+EXCLUDES = ['palette.html', '*.md', '*.ai', 'requirements.txt', 'node_modules', 'sass', 'js/src', 'package.json', 'Gruntfile.json']
 
 # Spreadsheet cache lifetime in seconds. (Default: 4)
 # SPREADSHEET_CACHE_TTL = 4
@@ -51,25 +52,32 @@ DEFAULT_CONTEXT = {
    'OMNITURE': {   'domain': 'chicagotribune.com',
                     'section': 'news',
                     'sitename': 'Chicago Tribune',
-                    'subsection': 'local',
-                    'subsubsection': 'crime',
+                    'subsection': 'watchdog',
+                    'subsubsection': '',
                     'type': 'dataproject'},
     'name': 'superweeds',
-    'title': 'Glyphosate-resistant weeds'
+    'title': 'How weeds resist'
 }
 
-blueprint = Blueprint('split_peas', __name__)
+@register_hook('generate')
+def merge_extra_context(site, output_root, extra_context={}):
+    if extra_context is not None:
+        context = site.get_context()
+        context.update(**extra_context)
 
-@blueprint.app_template_filter('jsonify')
-def jsonify_filter(data):
-    return Markup(json.dumps(data))
+
+# blueprint = Blueprint('split_peas', __name__)
+
+# @blueprint.app_template_filter('jsonify')
+# def jsonify_filter(data):
+#     return Markup(json.dumps(data))
 
 
 
-@blueprint.app_template_filter('split_peas')
-def split_peas(text):
-    text = text.split('\n')
-    newtext = ""
-    for line in text:
-        newtext += "<p>%s</p>" % line
-    return newtext
+# @blueprint.app_template_filter('split_peas')
+# def split_peas(text):
+#     text = text.split('\n')
+#     newtext = ""
+#     for line in text:
+#         newtext += "<p>%s</p>" % line
+#     return newtext
