@@ -1,8 +1,12 @@
 {% extends "_base.html" %}
+{% block body_tag %}
+    {{ super() }}
+    {# include "partials/_us_map.svg" #}
+{% endblock body_tag %}
 
 {% block content %}
 <article>
-    <!--     <div class="advert top-ad" data-ad-type="leaderboard"></div>-->        
+         <div class="advert top-ad visible-xs" data-ad-type="shrinky-cube"></div>        
     <div class="container">
         <div class='farm-outer'>
             {% include "_social_row.html" %}
@@ -53,14 +57,14 @@
                 <div id='can4'  ></div>
                 <div id='seed' class='animation-component'> </div>
             </div>
-             {#<div class="advert col-xs-12 col-sm-4" data-ad-type="shrinky-cube"></div>#}
+             {#<div class="advert hidden-xs" data-ad-type="shrinky-cube"></div>#}
         </div>
         <div class='scroller-outer'>
             <div class='scroller-inner'>
                 <section id='intro'>
                     <div class="row">
                         <div class="col-md-12">
-                         <div class="advert col-xs-12 col-sm-4" data-ad-type="shrinky-cube"></div>
+                         <div class="advert hidden-xs" data-ad-type="shrinky-cube"></div>
                         <div class='clearfix'></div>
 <h1 itemprop="headline">{{ headline }}</h1>
 <h2 itemprop="headline">{{ dek }}</h2>
@@ -71,7 +75,10 @@
 </section>
 <section id='blurbs'>
     {% for row in blurbs|sort(attribute='display_order') %}
-    {% include "partials/_blurb_template.html" %}
+        {% include "partials/_blurb_template.html" %}
+        {% if loop.last %}
+       
+        {% endif %}
     {% endfor %}
 </section>
 {% include "partials/_sources.html" %}
@@ -90,13 +97,9 @@
 
 {% block scripts %}
 {{ super() }}
-<script id="ht_planted_data">
-    var HT_PLANTED = {{ ht_planted|jsonify }};
-</script>
-<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.js"></script> -->
-<!-- <script type="text/javascript" src="http://{{ ROOT_URL }}/js/lib/d3.chart.min.js"></script> -->
+
 <script type="text/javascript" src="http://{{ ROOT_URL }}/js/lib/jquery.waypoints.min.js"></script>
-<!-- <script type="text/javascript" src="http://{{ ROOT_URL }}/js/src/glyphosate-ready-chart.js"></script> -->
+<script type="text/javascript" src="http://{{ ROOT_URL }}/js/lib/jquery.makePanels.1.4.min.js"></script>
 <script type="text/javascript" src="http://{{ ROOT_URL }}/js/app.min.js"></script>
 {% endblock scripts %}
 
