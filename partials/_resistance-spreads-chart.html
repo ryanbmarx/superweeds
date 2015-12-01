@@ -1,0 +1,18 @@
+
+<figure id="resistance-spreads-map" class='chart-wrapper'>
+        <h4 class='chart-label'>{{ palmer_label }}</h4>
+        <h4 class='chart-sub-label'>{{ palmer_sublabel }}</h4>
+        <ul class='inline key'>
+        <li><span class="box sighting"></span> {{ palmer_key_sighting }}</li>
+            <li><span class="box previous"></span> {{ palmer_key_previous }}</li>
+        </ul>
+    <div id="palmer-map">
+    {% for num in range(2005, 2015) %}
+    <div id='year{{ num }}' class='panel year' data-btn-label="{{ num }}">
+        <h4 class='chart-label text-center'><em>{{ num }}</em></h4>
+        <img src="img/palmer-map/palmer-map_{{ num }}.svg" />
+    </div>
+    {% endfor %}
+    <p class='note'>{{ palmer_note }}</p> 
+    </div>
+</figure>
