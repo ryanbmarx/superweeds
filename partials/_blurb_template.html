@@ -1,6 +1,8 @@
 <div id="{{ row.id }}" class='blurb-wrapper'>
+<div class='farm-wrapper'>
+	<img src="img/mobile/ct-farm-scenes-for web-weeds-mobile_{{ row.id }}.png">
+</div>
 	<h3 class='blurb-label'>{{ row.label }}</h3>
-	<strong>{{ row.id }}</strong>
 	{{ row.text|markdown }}
 	{% include "partials/_" ~ row.id ~ "-chart.html" ignore missing %}
 </div>
