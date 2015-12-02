@@ -136,7 +136,7 @@ body[data-triggered='weeds-bad']{
 
 
 	.alive{
-		.corn1, .corn2, .corn3, .corn4 {
+		.corn1, .corn2, .corn3, .corn4, .corn5, .corn6 {
 			opacity:1;
 		}
 	}
@@ -193,10 +193,10 @@ body[data-triggered='weeds-bad']{
 		transition-delay:$weed_random_delay3 + 1300ms;
 	}
 
-	.alive .weed12{
-		opacity:1;
-		transition-delay:$weed_random_delay4 + 200ms;
-	}
+	// .alive .weed12{
+	// 	opacity:1;
+	// 	transition-delay:$weed_random_delay4 + 200ms;
+	// }
 
 	.alive .weed13{
 		opacity:1;
@@ -281,12 +281,11 @@ body[data-triggered='expensive-weed-control']{
 	#sprayer-spray{
 		transition:all 200ms;
 		-webkit-transition:all 200ms;
-// opacity:1;
-animation-name: spraying-spray;
-animation-duration: 16s;
-animation-iteration-count: infinite;
-animation-delay:10.5s;
-}
+		animation-name: spraying-spray;
+		animation-duration: 16s;
+		animation-iteration-count: infinite;
+		animation-delay:10.5s;
+	}
 
 .alive .weed1{
 	opacity:1;
@@ -306,12 +305,30 @@ animation-delay:10.5s;
 	@include fill-mode('f');
 }
 
+.alive .weed5{
+	opacity:1;
+	animation-duration: .2s;
+	animation-name: weed-die;
+	animation-iteration-count: 1;
+	animation-delay:15.2s;
+	@include fill-mode('f');
+}
+
 .alive .weed7{
 	opacity:1;
 	animation-duration: .2s;
 	animation-name: weed-die;
 	animation-iteration-count: 1;
 	animation-delay:16.5s;
+	@include fill-mode('f');
+}
+
+.alive .weed10{
+	opacity:1;
+	animation-duration: .2s;
+	animation-name: weed-die;
+	animation-iteration-count: 1;
+	animation-delay:13.5s;
 	@include fill-mode('f');
 }
 
@@ -332,6 +349,15 @@ animation-delay:10.5s;
 	@include fill-mode('f');
 }
 
+.dead .weed5{
+	opacity:0;
+	animation-duration: .2s;
+	animation-name: weed-live;
+	animation-iteration-count: 1;
+	animation-delay:15.2s;
+	@include fill-mode('f');
+}
+
 .dead .weed7{
 	opacity:0;
 	animation-duration: .2s;
@@ -340,8 +366,17 @@ animation-delay:10.5s;
 	animation-delay:16.5s;
 	@include fill-mode('f');
 }
+
+.dead .weed10{
+	opacity:0;
+	animation-duration: .2s;
+	animation-name: weed-live;
+	animation-iteration-count: 1;
+	animation-delay:13.5s;
+	@include fill-mode('f');
+}
 .alive{
-	.corn1, .corn2, .corn3, .corn4{
+	.corn1, .corn2, .corn3, .corn5{
 		opacity:1;
 	}
 }
