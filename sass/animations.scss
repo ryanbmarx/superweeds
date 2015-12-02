@@ -377,6 +377,12 @@ body[data-triggered='expensive-weed-control']{
 }
 .alive{
 	.corn1, .corn2, .corn3, .corn5{
+		// opacity:1;
+	}
+}
+
+.blank{
+	.blank1, .blank2, .blank3, .blank5 {
 		opacity:1;
 	}
 }
@@ -708,7 +714,6 @@ body[data-triggered='resistance-spreads']{
 }
 
 
-
 @keyframes seed-flies{
 	0%{
 		transform: translate(0,0) scale(1) rotate(0);
@@ -722,13 +727,85 @@ body[data-triggered='resistance-spreads']{
 	}
 }
 
+@keyframes seed-flies2{
+	0%{
+		transform: translate(0,0) scale(1) rotate(0);
+		-webkit-transform: translate(0,0) scale(1) rotate(0);
+	}
+
+	100%{
+		transform: translate(200px, -400px) scale(.9) rotate(399grad);
+		-webkit-transform: translate(200px, -400px) scale(.9) rotate(399grad);
+
+	}
+}
+
+@keyframes seed-flies3{
+	0%{
+		transform: translate(0,0) scale(1) rotate(0);
+		-webkit-transform: translate(0,0) scale(1) rotate(0);
+	}
+
+	100%{
+		transform: translate(-250px, -400px) scale(.9) rotate(399grad);
+		-webkit-transform: translate(-250px, -400px) scale(.9) rotate(399grad);
+
+	}
+}
+
+@keyframes seed-flies4{
+	0%{
+		transform: translate(0,0) scale(1) rotate(0);
+		-webkit-transform: translate(0,0) scale(1) rotate(0);
+	}
+
+	100%{
+		transform: translate(-25px, -400px) scale(.9) rotate(399grad);
+		-webkit-transform: translate(-25px, -400px) scale(.9) rotate(399grad);
+
+	}
+}
+
 #seed{
 	opacity:1;
 	top: 60%;
 	left: 24%;
 	animation-duration: 10s;
-	// animation-name: seed-flies;
-	animation-iteration-count: 1;
+	animation-name: seed-flies;
+	animation-iteration-count: infinite;
+	animation-delay:.5s;
+
+}
+
+#seed2{
+	opacity:1;
+	top: 60%;
+	left: 24%;
+	animation-duration: 10s;
+	animation-name: seed-flies2;
+	animation-iteration-count: infinite;
+	animation-delay:1.5s;
+
+}
+
+#seed3{
+	opacity:1;
+	top: 60%;
+	left: 24%;
+	animation-duration: 10s;
+	animation-name: seed-flies3;
+	animation-iteration-count: infinite;
+	animation-delay:2.2s;
+
+}
+
+#seed4{
+	opacity:1;
+	top: 60%;
+	left: 24%;
+	animation-duration: 10s;
+	animation-name: seed-flies4;
+	animation-iteration-count: infinite;
 	animation-delay:1s;
 
 }

@@ -13,6 +13,41 @@
 $alive_y:-9px;
 $dead_y:-115px;
 
+.blank img{
+	position:absolute;
+	opacity:0;
+}
+
+.blank1{
+	top:86%;
+	left:1%;
+}
+
+.blank2{
+	top:61.2%;
+	left: 11%;
+}
+
+.blank3{
+	top:49%;
+	left: 31.5%;
+}
+
+.blank4{
+	top:1%;
+	left: 51%;
+}
+
+.blank5{
+	top:68%;
+	left:32%;
+}
+
+.blank6{
+	top:1%;
+	left:53%;
+}
+
 %corn{
 	@extend %plant;
 	width:66px;
@@ -60,8 +95,10 @@ $dead_y:-115px;
 
 %weed3_dead{
 	@extend %plant;
-	background-position: -3px -128px;
-	width:71px;
+	background-position: -3px -129px;
+	width: 71px;
+	height: 110px;
+	margin-top:15px;
 }
 
 // These are only for positioning x, y and z
@@ -125,7 +162,8 @@ $dead_y:-115px;
 }
 
 .weed5{
-	top: 37.5%;
+	// top: 37.5%;
+	top:35.2%;
 	left: 21%;
 }
 

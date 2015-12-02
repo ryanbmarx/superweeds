@@ -196,12 +196,10 @@ html, body{background:white;}
 	background-position:-141px 4px;
 }
 
-#seed{
-	width:10px;
-	height:25px;
-	border-radius:50%;
-	background-color:yellowgreen;
+#seed, #seed2, #seed3, #seed4{
+	// width:10px;
 	opacity:0;
+	width:20px;
 }
 
 #tree{
