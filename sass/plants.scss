@@ -1,0 +1,210 @@
+// These are the base styles for the various plants, extended as needed by each individual plant.
+
+%plant{
+	@extend .animation-component;
+	background-image: url("../img/plants.png");
+	background-repeat:no-repeat;
+	width: 67px;
+	height: 113px;
+	opacity:0;
+	// border:1px solid blue;
+}
+
+$alive_y:-9px;
+$dead_y:-115px;
+
+%corn{
+	@extend %plant;
+	width:66px;
+	height:116px;
+	background-position: -328px $alive_y;
+}
+
+%weed1{
+	@extend %plant;
+	background-position: -88px $alive_y;
+	height: 122px;
+	width:68px;
+}
+
+%weed2{
+	@extend %plant;	
+	background-position: -247px $alive_y;
+	width:72px;
+}
+
+%weed3{
+	@extend %plant;
+	background-position: -3px top;
+	width:71px;
+	height:125px;
+}
+
+%corn_dead{
+	@extend %plant;
+	background-position: -328px -125px;
+}
+
+%weed1_dead{
+	@extend %plant;
+	background-position: -84px -123px;
+	height: 122px;
+	width:68px;
+}
+
+%weed2_dead{
+	@extend %plant;	
+	background-position: -247px -125px;
+	width:72px;
+}
+
+%weed3_dead{
+	@extend %plant;
+	background-position: -3px -128px;
+	width:71px;
+}
+
+// These are only for positioning x, y and z
+.corn1{
+	@include frontrow();	
+	top:68%;
+	left:1%;
+}
+
+.corn2{
+	@include backrow();	
+	top: 43%;
+	left: 11%;
+}
+
+.corn3{
+	@include backrow();
+	top: 31%;
+	left: 31.5%;
+}
+
+.corn4{
+	top: 17%;
+	left: 51%;
+
+}
+
+.corn5{
+	@include frontrow();
+	top: 50%;
+	left: 32%;
+
+}
+
+.corn6{
+	top: 37.3%;
+	left: 53%;
+}
+
+
+.weed1{
+	@include frontrow();
+	top: 62%;
+	left: 11%;
+}
+
+.weed2{
+	@include backrow();
+	top: 49%;
+	left: .5%;
+}
+
+.weed3{
+	top: 53%;
+	left: 31%;
+}
+
+.weed4{
+	top:1%;
+	left:1%;
+}
+
+.weed5{
+	top: 37.5%;
+	left: 21%;
+}
+
+// .weed6{
+// 	top: 17%;
+// 	left: 51%;
+// }
+
+.weed7{
+	@include frontrow();
+	top: 56.2%;
+	left: 21%;
+}
+
+.weed8{
+	top:1%;
+	left:1%;
+}
+
+.weed9{
+	top: 23.5%;
+	left: 41%;
+}
+
+.weed10{
+	top: 44%;
+	left: 42%;
+}
+
+.weed11{
+	top: 32%;
+	left: 62%;
+}
+
+// .weed12{
+// 	@include frontrow();
+// 	top: 48%;
+// 	left: 31%;
+// }
+
+// .weed13{
+// 	top: 37.3%;
+// 	left: 53%;
+// }
+
+// This sets the background position to reflect living plants
+
+.alive{
+	.corn1, .corn2, .corn3, .corn4, .corn5, .corn6{
+		@extend %corn;
+	}
+	.weed1, .weed4, .weed7, .weed10, .weed13{
+		@extend %weed1;
+	}
+
+	.weed2, .weed5, .weed8, .weed11{
+		@extend %weed2;
+	}
+
+	.weed3, .weed5, .weed9, .weed12{
+		@extend %weed3;
+	}
+}
+
+// This changes the background position to reflect dead plants
+
+.dead{
+	.corn1, .corn2, .corn3, .corn4, .corn5, .corn6{
+		@extend %corn_dead;
+	}
+	.weed1, .weed4, .weed7, .weed10, .weed13{
+		@extend %weed1_dead;
+	}
+
+	.weed2, .weed5, .weed8, .weed11{
+		@extend %weed2_dead;
+	}
+
+	.weed3, .weed5, .weed9, .weed12{
+		@extend %weed3_dead;
+	}
+}
