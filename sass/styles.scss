@@ -49,17 +49,21 @@ $farm-border-radius:10px;
 @import "tooltip";
 
 [data-tooltip]::before{
-	width:66px;
+	width: auto;
 	left:129%;
 	bottom: 60%;
 	display:none;
+}
+
+[data-tooltip="RESISTANT"]::before{
+	left:116%;
 }
 
 [data-tooltip]::after{
 	display:none;
 }
 
-[data-tooltip="WEED"], [data-tooltip="DEAD WEED"]{
+[data-tooltip="WEED"], [data-tooltip="DEAD WEED"], [data-tooltip="RESISTANT"]{
 	&::before{
 		background-color:$weed_label_color;
 	}

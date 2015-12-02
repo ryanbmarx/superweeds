@@ -401,7 +401,6 @@ body[data-triggered='glyphosate-ready']{
 		animation-iteration-count: 3;
 		animation-delay:.5s;
 		@include fill-mode('f');
-
 	}
 
 	#sprayer{
@@ -412,8 +411,6 @@ body[data-triggered='glyphosate-ready']{
 		animation-name: spraying-sprayer;
 		animation-iteration-count: infinite;
 		animation-delay:10s;
-// animation-duration: 3s; //debugger
-// animation-iteration-count: 1; //debugger
 }
 
 
@@ -428,46 +425,78 @@ body[data-triggered='glyphosate-ready']{
 
 }
 
-.alive .corn3{
-	opacity:1;
-	animation-duration: .5s;
-	animation-name: weed-live;
-	animation-iteration-count: 1;
-	animation-delay:13s;
-	@include fill-mode('f');
-}
-
-.alive .corn2{
-	opacity:1;
-	animation-duration: .5s;
-	animation-name: weed-live;
-	animation-iteration-count: 1;
-	animation-delay:14.5s;
-	@include fill-mode('f');
-}
-
-
-.alive .weed7{
-	opacity:1;
-	animation-duration: .001s;
-	animation-name: weed-die;
-	animation-iteration-count: 1;
-	animation-delay:14.7s;
-	@include fill-mode('f');
+.alive{
+	.corn1, .corn2, .corn3, .corn5{
+		opacity:1;
+	}
 }
 
 .alive .weed1{
 	opacity:1;
-	animation-duration: .001s;
+	animation-duration: .2s;
+	animation-name: weed-die;
+	animation-iteration-count: 1;
+	animation-delay:17s;
+	@include fill-mode('f');
+}
+
+.alive .weed2{
+	opacity:1;
+	animation-duration: .2s;
+	animation-name: weed-die;
+	animation-iteration-count: 1;
+	animation-delay:17.5s;
+	@include fill-mode('f');
+}
+
+.alive .weed5{
+	opacity:1;
+	animation-duration: .2s;
 	animation-name: weed-die;
 	animation-iteration-count: 1;
 	animation-delay:15.2s;
 	@include fill-mode('f');
 }
-.alive .weed2{
+
+.alive .weed7{
 	opacity:1;
-	animation-duration: .001s;
+	animation-duration: .2s;
 	animation-name: weed-die;
+	animation-iteration-count: 1;
+	animation-delay:16.5s;
+	@include fill-mode('f');
+}
+
+.alive .weed10{
+	opacity:1;
+	animation-duration: .2s;
+	animation-name: weed-die;
+	animation-iteration-count: 1;
+	animation-delay:13.5s;
+	@include fill-mode('f');
+}
+
+.dead .weed1{
+	opacity:0;
+	animation-duration: .2s;
+	animation-name: weed-live;
+	animation-iteration-count: 1;
+	animation-delay:17s;
+	@include fill-mode('f');
+}
+.dead .weed2{
+	opacity:0;
+	animation-duration: .2s;
+	animation-name: weed-live;
+	animation-iteration-count: 1;
+	animation-delay:17.5s;
+	@include fill-mode('f');
+}
+
+.dead .weed5{
+	opacity:0;
+	animation-duration: .2s;
+	animation-name: weed-live;
 	animation-iteration-count: 1;
 	animation-delay:15.2s;
 	@include fill-mode('f');
@@ -475,36 +504,19 @@ body[data-triggered='glyphosate-ready']{
 
 .dead .weed7{
 	opacity:0;
-	animation-duration: .001s;
+	animation-duration: .2s;
 	animation-name: weed-live;
 	animation-iteration-count: 1;
-	animation-delay:14.7s;
+	animation-delay:16.5s;
 	@include fill-mode('f');
 }
 
-.dead .weed1{
+.dead .weed10{
 	opacity:0;
-	animation-duration: .001s;
+	animation-duration: .2s;
 	animation-name: weed-live;
 	animation-iteration-count: 1;
-	animation-delay:15.2s;
-	@include fill-mode('f');
-}
-.dead .weed2{
-	opacity:0;
-	animation-duration: .001s;
-	animation-name: weed-live;
-	animation-iteration-count: 1;
-	animation-delay:15.2s;
-	@include fill-mode('f');
-}
-
-.alive .corn1{
-	opacity:1;
-	animation-duration: .5s;
-	animation-name: weed-live;
-	animation-iteration-count: 1;
-	animation-delay:16s;
+	animation-delay:13.5s;
 	@include fill-mode('f');
 }
 
@@ -529,7 +541,6 @@ body[data-triggered='resistance-develops']{
 	}
 
 	#sprayer-spray{
-		z-index:1111;
 		transition:all 200ms;
 		-webkit-transition:all 200ms;
 		animation-name: spraying-spray;
@@ -537,46 +548,104 @@ body[data-triggered='resistance-develops']{
 		animation-iteration-count: infinite;
 
 	}
-
-	.alive .weed10{
-		z-index:1110;
+.alive{
+	.corn1, .corn2, .corn3, .corn5{
 		opacity:1;
-		animation-duration: .001s;
-		animation-name: weed-die;
-		animation-iteration-count: 1;
-		animation-delay:3s;
-		@include fill-mode('f');
 	}
+}
 
-	.dead .weed10{
-		z-index:1110;
-		opacity:0;
-		animation-duration: .001s;
-		animation-name: weed-live;
-		animation-iteration-count: 1;
-		animation-delay:3s;
-		@include fill-mode('f');
+.alive .weed1{
+	opacity:1;
+	animation-duration: .2s;
+	animation-name: weed-die;
+	animation-iteration-count: 1;
+	animation-delay:7s;
+	@include fill-mode('f');
+}
+
+.alive .weed2{
+	opacity:1;
+	animation-duration: .2s;
+	animation-name: weed-die;
+	animation-iteration-count: 1;
+	animation-delay:7.5s;
+	@include fill-mode('f');
+}
+
+.alive .weed5{
+	opacity:1;
+	animation-duration: .2s;
+	animation-name: weed-die;
+	animation-iteration-count: 1;
+	animation-delay:4.9s;
+	@include fill-mode('f');
+}
+
+.alive .weed7{
+	opacity:1;
+	animation-duration: .2s;
+	animation-name: weed-die;
+	animation-iteration-count: 1;
+	animation-delay:6.1s;
+	@include fill-mode('f');
+}
+
+.alive .weed10{
+	opacity:1;
+	animation-duration: .2s;
+	animation-name: weed-die;
+	animation-iteration-count: 1;
+	animation-delay:3.2s;
+	@include fill-mode('f');
+}
+
+.dead .weed1{
+	opacity:0;
+	animation-duration: .2s;
+	animation-name: weed-live;
+	animation-iteration-count: 1;
+	animation-delay:7s;
+	@include fill-mode('f');
+}
+.dead .weed2{
+	opacity:0;
+	animation-duration: .2s;
+	animation-name: weed-live;
+	animation-iteration-count: 1;
+	animation-delay:7.5s;
+	@include fill-mode('f');
+}
+
+.dead .weed5{
+	opacity:0;
+	animation-duration: .2s;
+	animation-name: weed-live;
+	animation-iteration-count: 1;
+animation-delay:4.9s;
+	@include fill-mode('f');
+}
+
+.resistant .weed7{
+	opacity:0;
+	animation-duration: 2s;
+	animation-name: weed-live;
+	animation-iteration-count: infinite;
+	animation-delay:6.1s;
+	@include fill-mode('f');
+	&:before{
+		display:block;
 	}
+}
 
+.dead .weed10{
+	opacity:0;
+	animation-duration: .2s;
+	animation-name: weed-live;
+	animation-iteration-count: 1;
+	animation-delay:3.2s;
+	@include fill-mode('f');
+}
 
-	.alive .weed7{
-		opacity:1;
-		z-index:1110;
-		animation-duration: 1.5s;
-		animation-name: weed-live;
-		animation-iteration-count: infinite;
-		animation-delay:4.5s;
-		// @include fill-mode('f');
-		&::before{
-			content:"Resistant";
-			// opacity:0;
-			display:block;
-		}
-	}
-
-
-
-	
 }
 
 // #######################
@@ -586,26 +655,26 @@ body[data-triggered='resistance-develops']{
 // #######################
 
 body[data-triggered='resistance-distills']{
-	// @include notooltip();
 	$weed_random_delay1: random(3000);
 	$weed_random_delay2: random(3000);
 	$weed_random_delay3: random(3000);
 	$weed_random_delay4: random(3000);
-
-	.alive{
-		.weed1, .weed2, .weed3, .weed4, .weed5, .weed6, .weed7, .weed8, .weed9, .weed10,.weed11,.weed12, .weed13{ 
-			opacity:0;
-			z-index:1110;
-			animation-duration: 1.5s;
-			animation-name: weed-live;
-			animation-iteration-count: infinite;
-			animation-delay:1s;
-			&::before{
-				content:"Resistant";
-			// opacity:0;
+.alive{
+	.corn1, .corn2, .corn3, .corn5, .corn4, .corn6{
+		opacity:1;
+	}
+}
+.resistant{
+	.weed1, .weed2, .weed5, .weed6, .weed7, .weed9, .weed10,.weed11{ 
+		opacity:0;
+		animation-duration: 1.5s;
+		animation-name: weed-live;
+		animation-iteration-count: infinite;
+		animation-delay:0s;
+		&:before{
 			display:block;
 		}
-	}	
+}	
 }
 
 #truck{
@@ -625,17 +694,20 @@ body[data-triggered='resistance-distills']{
 
 body[data-triggered='resistance-spreads']{
 	@include notooltip();
-	.alive{
-		.weed12 { 
-			opacity:1;
-			z-index:1110;
-			&::before{
-				content:"Resistant";
-			// opacity:0;
+.resistant{
+	.weed7{ 
+		opacity:0;
+		animation-duration: 1.5s;
+		animation-name: weed-live;
+		animation-iteration-count: infinite;
+		animation-delay:0s;
+		&:before{
 			display:block;
 		}
-	}	
+}	
 }
+
+
 
 @keyframes seed-flies{
 	0%{
@@ -652,10 +724,10 @@ body[data-triggered='resistance-spreads']{
 
 #seed{
 	opacity:1;
-	top: 52%;
-	left: 35%;
+	top: 60%;
+	left: 24%;
 	animation-duration: 10s;
-	animation-name: seed-flies;
+	// animation-name: seed-flies;
 	animation-iteration-count: 1;
 	animation-delay:1s;
 

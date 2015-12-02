@@ -174,7 +174,7 @@ $dead_y:-115px;
 
 // This sets the background position to reflect living plants
 
-.alive{
+.resistant, .alive{
 	.corn1, .corn2, .corn3, .corn4, .corn5, .corn6{
 		@extend %corn;
 	}
