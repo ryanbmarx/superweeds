@@ -24,6 +24,9 @@ $(document).ready(function(){
 		var waypointsDown = $('.blurb-wrapper').waypoint(function(direction){
 			console.log(this.element.id,direction);
 			if(direction == "down"){
+				if($('.keep-scrolling-wrapper').is(":visible")){
+					$('.keep-scrolling-wrapper').slideUp(500).fadeOut(500);
+				}
 				var triggeredPoint = this.element.id
 				$('body').attr('data-triggered', "XXX");
 				setTimeout(function() {
@@ -39,6 +42,9 @@ $(document).ready(function(){
 		var waypointsUp = $('.blurb-wrapper').waypoint(function(direction){
 			console.log(this.element.id,direction);
 			if(direction == "up"){
+								if($('.keep-scrolling-wrapper').is(":visible")){
+					$('.keep-scrolling-wrapper').slideUp(500).fadeOut(500);
+				}
 				var triggeredPoint = this.element.id
 				$('body').attr('data-triggered', "XXX");
 				setTimeout(function() {
