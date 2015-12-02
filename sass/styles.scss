@@ -12,6 +12,8 @@ $blurb_wrapper_bg:#ffffcd;
 
 $palmer_sighting: #6f8d5c;
 $palmer_sighting_previous: #b7c6ad;
+
+$farm-border-radius:10px;
 // IMPORTS
 
 
@@ -83,6 +85,41 @@ $palmer_sighting_previous: #b7c6ad;
 html, body{background:white;}
 .advert{margin-bottom: 25px;}
 
+.keep-scrolling-wrapper{
+	border-top:2px solid white;
+	background: $corn_color;
+    padding: 10px;
+    margin-top: 0;
+    border-radius: 0 0 $farm-border-radius $farm-border-radius;
+	p{
+		margin-bottom:5px;
+		@include sans-serif-type();
+	}
+}
+.pulse-arrow{
+	position: relative;
+    background: black;
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    color: $corn_color;
+    border-radius: 50%;
+
+	&:before{
+			content: "x";
+			font-family: trb_Icons;
+			font-size:15px;
+			font-weight: normal;
+			font-style: normal;
+			text-decoration: inherit;
+			-webkit-font-smoothing: antialiased;
+			animation-name: pulse-down;
+			animation-duration: 3s;
+			animation-iteration-count: infinite;
+
+	}
+}
+
 .farm-outer{
 	width:$farm_width_large;
 	transition: all 150ms;
@@ -101,7 +138,7 @@ html, body{background:white;}
 		background: url('../img/farm-base2.png') #eee;
 		background-size: cover;
 		position:relative;
-		border-radius: 10px;
+		border-radius: $farm-border-radius $farm-border-radius 0 0;
 
 
 	}

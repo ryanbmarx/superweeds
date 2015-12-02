@@ -40,6 +40,18 @@
 		}
 
 	}
+	
+	@keyframes pulse-down{
+		from{
+			transform: translate(0,0);
+			-webkit-transform: translate(0,0);
+		}
+
+		to{
+			transform: translate(0,3px);
+			-webkit-transform: translate(0,3px);
+		}
+	}
 
 	@keyframes spraying-sprayer {
 		0%{
