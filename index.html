@@ -1,8 +1,9 @@
 {% extends "_base.html" %}
-{% block body_tag %}
+{% block bodyattrs %}
     {{ super() }}
-    {# include "partials/_us_map.svg" #}
-{% endblock body_tag %}
+    data-triggered="intro"
+{% endblock bodyattrs %}
+
 
 {% block content %}
 <article>
@@ -68,11 +69,22 @@
                     <!-- <div class='weed12'  data-tooltip="RESISTANT"></div> -->
                     <!-- <div class='weed13'  data-tooltip="RESISTANT"></div> -->
                 </div>
-                <div id='can1'  ></div>
-                <div id='can2'  ></div>
-                <div id='can3'  ></div>
-                <div id='can4'  ></div>
-                <div id='seed' class='animation-component'> </div>
+                <div class='blank'>
+                    <img class='blank1' src="img/blank-square.png" />
+                    <img class='blank2' src="img/blank-square.png" />
+                    <img class='blank3' src="img/blank-square.png" />
+                    <img class='blank4' src="img/blank-square.png" />
+                    <img class='blank5' src="img/blank-square.png" />
+                    <img class='blank6' src="img/blank-square.png" />
+                </div>
+                <div id='can1'></div>
+                <div id='can2'></div>
+                <div id='can3'></div>
+                <div id='can4'></div>
+                <img id='seed' class='animation-component' src="img/seed.png" />
+                <img id='seed2' class='animation-component' src="img/seed.png" />
+                <img id='seed3' class='animation-component' src="img/seed.png" />
+                <img id='seed4' class='animation-component' src="img/seed.png" />
             </div>
             <div class='text-center'>
             <div class='keep-scrolling-wrapper'>
@@ -90,6 +102,10 @@
                         <div class="col-md-12">
                          <div class="advert hidden-xs" data-ad-type="shrinky-cube"></div>
                         <div class='clearfix'></div>
+<div class='visible-xs'>
+    {% include "_social_row.html" %}
+    <br />
+</div>
 <h1 itemprop="headline">{{ headline }}</h1>
 <h2 itemprop="headline">{{ dek }}</h2>
 {% include "partials/_bylines.html" %}
@@ -100,9 +116,6 @@
 <section id='blurbs'>
     {% for row in blurbs|sort(attribute='display_order') %}
         {% include "partials/_blurb_template.html" %}
-        {% if loop.last %}
-       
-        {% endif %}
     {% endfor %}
 </section>
 {% include "partials/_sources.html" %}
