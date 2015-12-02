@@ -4,7 +4,7 @@
 /* Add this attribute to the element that needs a tooltip */
 [data-tooltip] {
   position: relative;
-  z-index: 2;
+  // z-index: 2;
   cursor: pointer;
   // transform:scale(0,.2)
 }
