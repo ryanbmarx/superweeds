@@ -107,22 +107,6 @@ html, body{background:white;}
 	}
 }
 
-// article#palette {
-// 	background:grey;
-// 	*{
-// 		opacity:1;
-// 		position:static !important;
-// 	}
-	
-// 	svg *{
-// 		fill:red;
-// 	}
-
-// 	%plant{
-// 		border:1px solid yellow;
-// 	}
-// }
-
 .animation-component{
 	opacity:0;
 	transition:opacity 200ms ease;
@@ -540,14 +524,14 @@ $dead_y:-115px;
 	.blurb-label{
 		position: relative;
 		&:before{
-			content:"\f104";
-			font-family: 'FontAwesome';
-			font-size:45px;
+			content: "v";
+			font-family: trb_Icons;
+			font-size:26px;
 			font-weight: normal;
 			font-style: normal;
 			text-decoration: inherit;
 			-webkit-font-smoothing: antialiased;
-			margin:-.30em 0 0 0;
+			margin:-.04em 0 0 0;
 			opacity: 0;
 			transition: all 300ms;
 			-webkit-transition: all 300ms;
@@ -562,7 +546,7 @@ $dead_y:-115px;
 		transition: all 200ms;
 		.blurb-label{
 			&:before{
-				margin-left:-25px;
+				margin-left:-30px;
 				opacity: 1;
 				transition: all 300ms;
 				-webkit-transition: all 300ms;
