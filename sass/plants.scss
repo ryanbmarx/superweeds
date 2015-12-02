@@ -151,6 +151,7 @@ $dead_y:-115px;
 }
 
 .weed10{
+	@include frontrow();
 	top: 44%;
 	left: 42%;
 }
