@@ -77,7 +77,7 @@ $farm-border-radius:10px;
 .go-panels {
 	.panel-nav{
 	border-bottom:none;
-	margin-bottom:5px;
+	margin-bottom:15px;
 	.panelButton{
 		background:transparent;
 		border: 1px solid #aaa; 
@@ -99,7 +99,17 @@ $farm-border-radius:10px;
 	}
 }
 
+.panel:last-child{
+	margin-bottom: 0px;
+border-bottom: 0px none;
+padding-bottom: 0px;
+}
+
 html, body{background:white;}
+body:not([data-triggered="intro"]){
+	.farm-inner{border-radius:$farm-border-radius;}
+
+}
 .advert{margin-bottom: 25px;}
 
 .keep-scrolling-wrapper{
