@@ -1,10 +1,18 @@
 <figure id="ht-planted-chart" class='chart-wrapper'>
 	<h4 class='chart-label'>{{ ht_crops_label }}</h4>
-	<h4 class='chart-sub-label'>{{ ht_crops_sublabel }}</h4>
 	<ul class='inline key'>
 		<li><span class="corn box"></span>Corn</li>
 		<li><span class="soy box"></span>Soy</li>
 		<li><span class="cotton box"></span>Cotton</li>
 	</ul>
-	{% include "partials/glyphosate-ready.html" %}
+	<div id='planted-charts'>
+		<div id='planted-charts--acres' class='panel' data-btn-label="{{ acres_button_label }}">
+			<h4 class='chart-sub-label'>{{ ht_crops_acres_sublabel }}</h4>
+			{% include "partials/glyphosate-ready-acres.html" %}
+		</div>
+		<div id='planted-charts--percentage' class='panel' data-btn-label="{{ percentage_button_label }}">
+			<h4 class='chart-sub-label'>{{ ht_crops_percentage_sublabel }}</h4>
+			{% include "partials/glyphosate-ready-percentage.html" %}
+		</div>
+	</div>
 </figure>

@@ -61,13 +61,18 @@ $(document).ready(function(){
 			continuous: false
 		});
 
-		$('#palmer-map').makePanels({
+	$('#palmer-map').makePanels({
 		type:"none",    /* Options are "none", "buttons" or "dropdown" */
 		transitionSpeed: 150, /* 0=instant, 1000 = 1 second */
 		showForwardBackButtons:true, /* duh! */
 		alignNav:"center" /* Also can be "left" */
 	});
-
+$('#planted-charts').makePanels({
+		type:"buttons",    /* Options are "none", "buttons" or "dropdown" */
+		transitionSpeed: 150, /* 0=instant, 1000 = 1 second */
+		showForwardBackButtons:false, /* duh! */
+		alignNav:"left" /* Also can be "left" */
+	});
 /*
 
 	//ACTIVATE THE WAYPOINTS ON DOT BAR NAV

@@ -77,6 +77,22 @@ $farm-border-radius:10px;
 .go-panels {
 	.panel-nav{
 	border-bottom:none;
+	margin-bottom:5px;
+	.panelButton{
+		background:transparent;
+		border: 1px solid #aaa; 
+		padding-left: 0;
+		padding-right: 0;
+		width: 50%;
+		&:hover{
+			background:#ddd;
+		}
+		&.active{
+			background:#aaa;
+			border-left:none;
+			border-right:none;
+		}
+	}
 	}
 	.panels{
 		padding-top:0;
@@ -212,308 +228,6 @@ html, body{background:white;}
 	top:104%;
 }
 
-// %plant{
-// 	@extend .animation-component;
-// 	background-image: url("../img/plants.png");
-// 	background-repeat:no-repeat;
-// 	width: 67px;
-// 	height: 113px;
-// 	opacity:0;
-// 	// border:1px solid blue;
-// }
-
-// $alive_y:-9px;
-// $dead_y:-115px;
-
-// %corn{
-// 	@extend %plant;
-// 	width:66px;
-// 	height:116px;
-// 	background-position: -328px $alive_y;
-// }
-
-// %weed1{
-// 	@extend %plant;
-// 	background-position: -88px $alive_y;
-// 	height: 122px;
-// 	width:68px;
-// }
-
-// %weed2{
-// 	@extend %plant;	
-// 	background-position: -247px $alive_y;
-// 	width:72px;
-// }
-
-// %weed3{
-// 	@extend %plant;
-// 	background-position: -3px top;
-// 	width:71px;
-// 	height:125px;
-// }
-
-// %corn_dead{
-// 	@extend %plant;
-// 	background-position: -328px -125px;
-// }
-
-// %weed1_dead{
-// 	@extend %plant;
-// 	background-position: -84px -123px;
-// 	height: 122px;
-// 	width:68px;
-// }
-
-// %weed2_dead{
-// 	@extend %plant;	
-// 	background-position: -247px -125px;
-// 	width:72px;
-// }
-
-// %weed3_dead{
-// 	@extend %plant;
-// 	background-position: -3px -128px;
-// 	width:71px;
-// }
-
-// .alive{
-// 	.corn1{
-// 		@extend %corn;
-// 		@include frontrow();	
-// 		top:68%;
-// 		left:1%;
-// 	}
-
-// 	.corn2{
-// 		@extend %corn;
-// 		@include backrow();	
-// 		top: 43%;
-// 		left: 11%;
-// 	}
-
-// 	.corn3{
-// 		@extend %corn;
-// 		@include backrow();
-// 		top: 31%;
-// 		left: 31.5%;
-// 	}
-
-// 	.corn4{
-// 		@extend %corn;
-// 			top: 17%;
-// 		left: 51%;
-
-// 	}
-
-// 	.corn5{
-// 		@extend %corn;
-// 		@include frontrow();
-// 		top: 50%;
-// 		left: 32%;
-
-// 	}
-
-// 	.corn6{
-// 		@extend %corn;
-// 		top: 27.5%;
-// 		left: 53.9%;
-// 	}
-
-
-// 	.weed1{
-// 		@extend %weed1;
-// 		@include frontrow();
-// 		top: 62%;
-// 		left: 11%;
-// 	}
-
-// 	.weed2{
-// 		@extend %weed2;
-// 		top: 49%;
-// 		left: .5%;
-// 		@include backrow();
-// 	}
-
-// 	.weed3{
-// 		@extend %weed3;
-// 		top: 53%;
-// 		left: 31%;
-// 	}
-
-// 	.weed4{
-// 		@extend %weed1;
-// 		top:1%;
-// 		left:1%;
-// 	}
-
-// 	.weed5{
-// 		@extend %weed2;
-// 		top: 37.5%;
-// 		left: 21%;
-// 	}
-
-// 	// .weed6{
-// 	// 	@extend %weed3;
-// 	// 	top: 17%;
-// 	// 	left: 51%;
-// 	// }
-
-// 	.weed7{
-// 		@extend %weed1;
-// 		@include frontrow();
-// 		top: 56.2%;
-// 		left: 21%;
-// 	}
-
-// 	.weed8{
-// 		@extend %weed2;
-// 		top:1%;
-// 		left:1%;
-// 	}
-
-// 	.weed9{
-// 		@extend %weed3;
-// 		top: 23.5%;
-// 		left: 41%;
-// 	}
-
-// 	.weed10{
-// 		@extend %weed1;
-// 		top: 44%;
-// 		left: 42%;
-// 	}
-
-// 	.weed11{
-// 		@extend %weed2;
-// 		top: 32%;
-// 		left: 62%;
-// 	}
-
-// 	// .weed12{
-// 	// 	@extend %weed3;
-// 	// 	@include frontrow();
-// 	// 	top: 48%;
-// 	// 	left: 31%;
-// 	// }
-// 	.weed13{
-// 		@extend %weed1;
-// 		top: 37.3%;
-// 		left: 53%;
-// 	}
-
-// }
-
-// .dead{
-// 	.corn1{
-// 		@extend %corn_dead;
-// 		@include frontrow();		
-// 		top:68%;
-// 		left:1%;
-
-// 	}
-
-// 	.corn2{
-// 		@extend %corn_dead;
-// 		@include backrow();	
-// 		top: 43%;
-// 		left: 11%;
-// 	}
-
-// 	.corn3{
-// 		@extend %corn_dead;
-// 		@include backrow();
-// 		top: 31%;
-// 		left: 31.5%;
-// 	}
-
-// 	.corn4{
-// 		@extend %corn_dead;
-// 		top: 27.5%;
-// 		left: 53.9%;
-// 	}
-
-// 	.weed1{
-// 		@extend %weed1_dead;
-// 		@include frontrow();
-// 		top: 62%;
-// 		left: 11%;
-// 	}
-
-// 	.weed2{
-// 		@extend %weed2_dead;
-// 		top: 49%;
-// 		left: .5%;
-
-// 	}
-
-// 	.weed3{
-// 		@extend %weed3_dead;
-// 		top: 53%;
-// 		left: 31%;
-// 	}
-
-// 	.weed4{
-// 		@extend %weed1_dead;
-// 		top:1%;
-// 		left:1%;
-// 	}
-
-// 	.weed5{
-// 		@extend %weed2_dead;
-// 		top: 37.5%;
-// 		left: 21%;
-// 	}
-
-// 	.weed6{
-// 		@extend %weed3_dead;
-// 		top: 17%;
-// 		left: 51%;
-// 	}
-
-// 	.weed7{
-// 		@extend %weed1_dead;
-// 		@include frontrow();
-// 		top: 56.2%;
-// 		left: 21%;
-// 	}
-
-// 	.weed8{
-// 		@extend %weed2_dead;
-// 		top:1%;
-// 		left:1%;
-// 	}
-
-// 	.weed9{
-// 		@extend %weed3_dead;
-// 		top: 23.5%;
-// 		left: 41%;
-// 	}
-
-// 	.weed10{
-// 		@extend %weed1_dead;
-// 		top: 44%;
-// 		left: 42%;
-// 	}
-
-// 	.weed11{
-// 		@extend %weed2_dead;
-// 		top: 32%;
-// 		left: 62%;
-// 	}
-
-// 	.weed12{
-// 		@extend %weed3_dead;
-// 		@include frontrow();
-// 		top: 48%;
-// 		left: 31%;
-// 	}
-// 	.weed13{
-// 		@extend %weed1_dead;
-// 		top: 37.3%;
-// 		left: 53%;
-// 	}
-
-// }
 %can{
 	@extend .animation-component;
 	background:url('../img/canisters2.png') top no-repeat;
@@ -653,7 +367,7 @@ figure.chart-wrapper{
  .g-aiPstyle0 {
     line-height: 25px;
 }
-#g-glyphosate-ready-desktop{overflow:visible;}
+#g-glyphosate-ready-acres, #g-glyphosate-ready-percentage{overflow:visible;}
 }
 #ht-planted-chart{max-width:400px;}
 
