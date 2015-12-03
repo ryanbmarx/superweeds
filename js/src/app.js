@@ -19,10 +19,10 @@ $(document).ready(function(){
 		$(window).resize(timedStickFarm);
 
 		var offsetDown = $('.farm-inner').outerHeight()/2 + $('.navbar-fixed-top').height();
-		console.log('Waypoints offsetDown is ' + offsetDown);
+		// console.log('Waypoints offsetDown is ' + offsetDown);
 
 		var waypointsDown = $('.blurb-wrapper').waypoint(function(direction){
-			console.log(this.element.id,direction);
+			// console.log(this.element.id,direction);
 			if(direction == "down"){
 				if($('.keep-scrolling-wrapper').is(":visible")){
 					$('.keep-scrolling-wrapper').slideUp(500).fadeOut(500);
@@ -40,7 +40,7 @@ $(document).ready(function(){
 			continuous: false
 		});
 		var waypointsUp = $('.blurb-wrapper').waypoint(function(direction){
-			console.log(this.element.id,direction);
+			// console.log(this.element.id,direction);
 			if(direction == "up"){
 								if($('.keep-scrolling-wrapper').is(":visible")){
 					$('.keep-scrolling-wrapper').slideUp(500).fadeOut(500);
