@@ -43,7 +43,7 @@ S3_BUCKETS = {
     #     "mytarget": "mys3url.bucket.url/some/path"
     # then use tarbell publish mytarget to publish to it
     
-    "production": "graphics.chicagotribune.com/news/watchdog/superweeds",
+    "production": "graphics.chicagotribune.com/news/watchdog/how-weeds-resist",
     "staging": "apps.beta.tribapps.com/superweeds",
 }
 
